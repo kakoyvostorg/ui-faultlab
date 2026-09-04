@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+<rect width="900" height="470" fill="#F5F7FB" rx="20"/>
+<text x="40" y="48" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#182542">Inference latency by task</text>
+<text x="40" y="76" font-family="system-ui,sans-serif" font-size="14" fill="#68748B">Each dot is one model call · first-call warm-up outlier retained</text>
+<line x1="85" y1="390.0" x2="860" y2="390.0" stroke="#D4DAE7"/>
+<text x="42" y="395.0" font-family="system-ui,sans-serif" font-size="13" fill="#68748B">0s</text>
+<line x1="85" y1="338.2" x2="860" y2="338.2" stroke="#D4DAE7"/>
+<text x="42" y="343.2" font-family="system-ui,sans-serif" font-size="13" fill="#68748B">10s</text>
+<line x1="85" y1="286.4" x2="860" y2="286.4" stroke="#D4DAE7"/>
+<text x="42" y="291.4" font-family="system-ui,sans-serif" font-size="13" fill="#68748B">20s</text>
+<line x1="85" y1="234.5" x2="860" y2="234.5" stroke="#D4DAE7"/>
+<text x="42" y="239.5" font-family="system-ui,sans-serif" font-size="13" fill="#68748B">30s</text>
+<line x1="85" y1="182.7" x2="860" y2="182.7" stroke="#D4DAE7"/>
+<text x="42" y="187.7" font-family="system-ui,sans-serif" font-size="13" fill="#68748B">40s</text>
+<line x1="85" y1="130.9" x2="860" y2="130.9" stroke="#D4DAE7"/>
+<text x="42" y="135.9" font-family="system-ui,sans-serif" font-size="13" fill="#68748B">50s</text>
+<circle cx="155" cy="364.4" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="161" cy="363.9" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="167" cy="359.5" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="173" cy="363.9" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="179" cy="355.4" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="185" cy="114.7" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="160" cy="364.7" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="166" cy="356.6" r="5" fill="#4669E8" opacity="0.70"/>
+<line x1="136" y1="361.7" x2="204" y2="361.7" stroke="#CA414B" stroke-width="4"/>
+<text x="170" y="425" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#182542">Create event</text>
+<text x="170" y="446" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#68748B">median 5.5s · n=8</text>
+<circle cx="345" cy="363.7" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="351" cy="364.8" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="357" cy="362.9" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="363" cy="363.3" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="369" cy="364.0" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="375" cy="364.3" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="350" cy="364.4" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="356" cy="364.4" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="362" cy="364.4" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="368" cy="365.4" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="374" cy="365.0" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="349" cy="365.4" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="355" cy="364.2" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="361" cy="363.7" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="367" cy="363.7" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="373" cy="364.8" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="348" cy="364.4" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="354" cy="364.7" r="5" fill="#4669E8" opacity="0.70"/>
+<line x1="326" y1="364.4" x2="394" y2="364.4" stroke="#CA414B" stroke-width="4"/>
+<text x="360" y="425" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#182542">Add attendee</text>
+<text x="360" y="446" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#68748B">median 4.9s · n=18</text>
+<circle cx="535" cy="363.6" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="541" cy="362.9" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="547" cy="363.2" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="553" cy="364.3" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="559" cy="363.9" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="565" cy="363.9" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="540" cy="364.0" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="546" cy="363.3" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="552" cy="363.5" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="558" cy="363.6" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="564" cy="364.2" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="539" cy="364.1" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="545" cy="364.6" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="551" cy="364.5" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="557" cy="363.3" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="563" cy="364.1" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="538" cy="363.7" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="544" cy="363.6" r="5" fill="#4669E8" opacity="0.70"/>
+<line x1="516" y1="363.8" x2="584" y2="363.8" stroke="#CA414B" stroke-width="4"/>
+<text x="550" y="425" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#182542">Reschedule</text>
+<text x="550" y="446" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#68748B">median 5.1s · n=18</text>
+<circle cx="725" cy="363.7" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="731" cy="363.6" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="737" cy="363.2" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="743" cy="364.6" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="749" cy="364.3" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="755" cy="363.9" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="730" cy="364.1" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="736" cy="363.9" r="5" fill="#4669E8" opacity="0.70"/>
+<circle cx="742" cy="363.4" r="5" fill="#4669E8" opacity="0.70"/>
+<line x1="706" y1="363.9" x2="774" y2="363.9" stroke="#CA414B" stroke-width="4"/>
+<text x="740" y="425" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#182542">Delete event</text>
+<text x="740" y="446" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#68748B">median 5.0s · n=9</text>
+</svg>

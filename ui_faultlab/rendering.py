@@ -105,7 +105,9 @@ def render_calendar(state: dict, instruction: str, path: str | Path, width: int 
     muted, line, red, green = (104, 116, 139), (212, 218, 231), (202, 65, 75), (41, 151, 112)
     c.rect(0, 0, width, 92, navy)
     c.text(36, 28, "MINI CALENDAR", white, 3)
-    c.text(36, 62, instruction, (202, 214, 240), 1, 120)
+    # The task instruction belongs to the agent input, not to the application's UI.
+    # Rendering it here creates a clickable-looking confound for visual agents.
+    c.text(36, 62, "SEPTEMBER 2026", (202, 214, 240), 1, 120)
     if state["screen"] == "calendar":
         c.rect(705, 108, 910, 162, blue)
         c.text(736, 126, "+ NEW EVENT", white, 2)
@@ -151,4 +153,3 @@ def render_calendar(state: dict, instruction: str, path: str | Path, width: int 
         c.rect(680, 24, 920, 72, color)
         c.text(714, 41, state["toast"], white, 2)
     c.write_png(path)
-

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430">
+<rect width="900" height="430" fill="#F5F7FB" rx="20"/>
+<text x="40" y="48" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#182542">ShowUI task success</text>
+<text x="40" y="76" font-family="system-ui,sans-serif" font-size="14" fill="#68748B">Clean known-good application · 3 deterministic seeds per task</text>
+<text x="40" y="140" font-family="system-ui,sans-serif" font-size="17" fill="#182542">Create event</text>
+<rect x="250" y="120" width="580" height="30" rx="7" fill="#E7EBF5"/>
+<rect x="250" y="120" width="0.0" height="30" rx="7" fill="#299770"/>
+<text x="262" y="141" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#182542">0/3 · 0%</text>
+<text x="40" y="208" font-family="system-ui,sans-serif" font-size="17" fill="#182542">Add attendee</text>
+<rect x="250" y="188" width="580" height="30" rx="7" fill="#E7EBF5"/>
+<rect x="250" y="188" width="0.0" height="30" rx="7" fill="#299770"/>
+<text x="262" y="209" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#182542">0/3 · 0%</text>
+<text x="40" y="276" font-family="system-ui,sans-serif" font-size="17" fill="#182542">Reschedule</text>
+<rect x="250" y="256" width="580" height="30" rx="7" fill="#E7EBF5"/>
+<rect x="250" y="256" width="0.0" height="30" rx="7" fill="#299770"/>
+<text x="262" y="277" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#182542">0/3 · 0%</text>
+<text x="40" y="344" font-family="system-ui,sans-serif" font-size="17" fill="#182542">Delete event</text>
+<rect x="250" y="324" width="580" height="30" rx="7" fill="#E7EBF5"/>
+<rect x="250" y="324" width="580.0" height="30" rx="7" fill="#299770"/>
+<text x="262" y="345" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#182542">3/3 · 100%</text>
+</svg>

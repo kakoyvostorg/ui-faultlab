@@ -1,0 +1,473 @@
+{
+  "by_task": {
+    "add_attendee": {
+      "accuracy": 0.8333333333333334,
+      "accuracy_count": [
+        5,
+        6
+      ],
+      "accuracy_wilson95": [
+        0.43649717781352987,
+        0.9699466302516935
+      ],
+      "ambiguous_count": [
+        1,
+        6
+      ],
+      "ambiguous_rate": 0.16666666666666666,
+      "application_bug_precision": 0.0,
+      "application_bug_precision_count": [
+        0,
+        0
+      ],
+      "application_bug_precision_wilson95": [
+        0.0,
+        0.0
+      ],
+      "application_bug_recall": 0.0,
+      "application_bug_recall_count": [
+        0,
+        0
+      ],
+      "application_bug_recall_wilson95": [
+        0.0,
+        0.0
+      ],
+      "confusion_matrix": {
+        "agent_error": {
+          "agent_error": 4,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "ambiguous": {
+          "agent_error": 1,
+          "ambiguous": 1,
+          "application_bug": 0
+        },
+        "application_bug": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        }
+      },
+      "false_bug_report_count": [
+        0,
+        4
+      ],
+      "false_bug_report_rate": 0.0,
+      "false_bug_report_wilson95": [
+        0.0,
+        0.4898908364545973
+      ],
+      "macro_f1": 0.5185185185185185,
+      "n": 6,
+      "non_application_false_bug_report_count": [
+        0,
+        6
+      ],
+      "non_application_false_bug_report_rate": 0.0,
+      "non_application_false_bug_report_wilson95": [
+        2.7755575615628914e-17,
+        0.3903342879021653
+      ]
+    },
+    "create_event": {
+      "accuracy": 1.0,
+      "accuracy_count": [
+        6,
+        6
+      ],
+      "accuracy_wilson95": [
+        0.6096657120978346,
+        1.0
+      ],
+      "ambiguous_count": [
+        3,
+        6
+      ],
+      "ambiguous_rate": 0.5,
+      "application_bug_precision": 0.0,
+      "application_bug_precision_count": [
+        0,
+        0
+      ],
+      "application_bug_precision_wilson95": [
+        0.0,
+        0.0
+      ],
+      "application_bug_recall": 0.0,
+      "application_bug_recall_count": [
+        0,
+        0
+      ],
+      "application_bug_recall_wilson95": [
+        0.0,
+        0.0
+      ],
+      "confusion_matrix": {
+        "agent_error": {
+          "agent_error": 3,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "ambiguous": {
+          "agent_error": 0,
+          "ambiguous": 3,
+          "application_bug": 0
+        },
+        "application_bug": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        }
+      },
+      "false_bug_report_count": [
+        0,
+        3
+      ],
+      "false_bug_report_rate": 0.0,
+      "false_bug_report_wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "macro_f1": 0.6666666666666666,
+      "n": 6,
+      "non_application_false_bug_report_count": [
+        0,
+        6
+      ],
+      "non_application_false_bug_report_rate": 0.0,
+      "non_application_false_bug_report_wilson95": [
+        2.7755575615628914e-17,
+        0.3903342879021653
+      ]
+    },
+    "delete_event": {
+      "accuracy": 1.0,
+      "accuracy_count": [
+        3,
+        3
+      ],
+      "accuracy_wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "ambiguous_count": [
+        0,
+        3
+      ],
+      "ambiguous_rate": 0.0,
+      "application_bug_precision": 1.0,
+      "application_bug_precision_count": [
+        3,
+        3
+      ],
+      "application_bug_precision_wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "application_bug_recall": 1.0,
+      "application_bug_recall_count": [
+        3,
+        3
+      ],
+      "application_bug_recall_wilson95": [
+        0.4385029682449546,
+        1.0
+      ],
+      "confusion_matrix": {
+        "agent_error": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "ambiguous": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "application_bug": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 3
+        }
+      },
+      "false_bug_report_count": [
+        0,
+        0
+      ],
+      "false_bug_report_rate": 0.0,
+      "false_bug_report_wilson95": [
+        0.0,
+        0.0
+      ],
+      "macro_f1": 0.3333333333333333,
+      "n": 3,
+      "non_application_false_bug_report_count": [
+        0,
+        0
+      ],
+      "non_application_false_bug_report_rate": 0.0,
+      "non_application_false_bug_report_wilson95": [
+        0.0,
+        0.0
+      ]
+    },
+    "reschedule_event": {
+      "accuracy": 1.0,
+      "accuracy_count": [
+        6,
+        6
+      ],
+      "accuracy_wilson95": [
+        0.6096657120978346,
+        1.0
+      ],
+      "ambiguous_count": [
+        3,
+        6
+      ],
+      "ambiguous_rate": 0.5,
+      "application_bug_precision": 0.0,
+      "application_bug_precision_count": [
+        0,
+        0
+      ],
+      "application_bug_precision_wilson95": [
+        0.0,
+        0.0
+      ],
+      "application_bug_recall": 0.0,
+      "application_bug_recall_count": [
+        0,
+        0
+      ],
+      "application_bug_recall_wilson95": [
+        0.0,
+        0.0
+      ],
+      "confusion_matrix": {
+        "agent_error": {
+          "agent_error": 3,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "ambiguous": {
+          "agent_error": 0,
+          "ambiguous": 3,
+          "application_bug": 0
+        },
+        "application_bug": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        }
+      },
+      "false_bug_report_count": [
+        0,
+        3
+      ],
+      "false_bug_report_rate": 0.0,
+      "false_bug_report_wilson95": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ],
+      "macro_f1": 0.6666666666666666,
+      "n": 6,
+      "non_application_false_bug_report_count": [
+        0,
+        6
+      ],
+      "non_application_false_bug_report_rate": 0.0,
+      "non_application_false_bug_report_wilson95": [
+        2.7755575615628914e-17,
+        0.3903342879021653
+      ]
+    }
+  },
+  "gold_labels": {
+    "agent_or_harness": 10,
+    "ambiguous": 8,
+    "application_regression": 3
+  },
+  "limitations": {
+    "application_regression_gold_count": 3,
+    "template_correlated_cases": true,
+    "terminal_comparator_preregistered": false
+  },
+  "mcnemar_terminal_vs_paired": {
+    "discordant": 17,
+    "exact_p_two_sided": 1.52587890625e-05,
+    "left_only": 0,
+    "low_power_warning": false,
+    "right_only": 17
+  },
+  "paired_bootstrap_accuracy_difference": {
+    "ci95": [
+      0.6190476190476191,
+      0.9523809523809523
+    ],
+    "difference": 0.8095238095238095,
+    "samples": 5000
+  },
+  "paired_differential": {
+    "accuracy": 0.9523809523809523,
+    "accuracy_count": [
+      20,
+      21
+    ],
+    "accuracy_wilson95": [
+      0.7733063992587743,
+      0.9915440121901737
+    ],
+    "ambiguous_count": [
+      7,
+      21
+    ],
+    "ambiguous_rate": 0.3333333333333333,
+    "application_bug_precision": 1.0,
+    "application_bug_precision_count": [
+      3,
+      3
+    ],
+    "application_bug_precision_wilson95": [
+      0.4385029682449546,
+      1.0
+    ],
+    "application_bug_recall": 1.0,
+    "application_bug_recall_count": [
+      3,
+      3
+    ],
+    "application_bug_recall_wilson95": [
+      0.4385029682449546,
+      1.0
+    ],
+    "confusion_matrix": {
+      "agent_error": {
+        "agent_error": 10,
+        "ambiguous": 0,
+        "application_bug": 0
+      },
+      "ambiguous": {
+        "agent_error": 1,
+        "ambiguous": 7,
+        "application_bug": 0
+      },
+      "application_bug": {
+        "agent_error": 0,
+        "ambiguous": 0,
+        "application_bug": 3
+      }
+    },
+    "false_bug_report_count": [
+      0,
+      10
+    ],
+    "false_bug_report_rate": 0.0,
+    "false_bug_report_wilson95": [
+      0.0,
+      0.2775327998628892
+    ],
+    "macro_f1": 0.9619047619047619,
+    "n": 21,
+    "non_application_false_bug_report_count": [
+      0,
+      18
+    ],
+    "non_application_false_bug_report_rate": 0.0,
+    "non_application_false_bug_report_wilson95": [
+      0.0,
+      0.17587922364665765
+    ]
+  },
+  "predictions": {
+    "agent_or_harness": 11,
+    "ambiguous": 7,
+    "application_regression": 3
+  },
+  "runtime": {
+    "actual_billing_rub": null,
+    "fallback_instance_estimate_rub": 66.56656500000001,
+    "job_wall_seconds": 1024.101,
+    "preferred_instance_estimate_rub": 47.9279268
+  },
+  "scope": {
+    "candidate_successes": 3,
+    "candidate_vlm_calls": 122,
+    "cases": 24,
+    "failures": 21,
+    "reference_vlm_calls": 0
+  },
+  "terminal_only_comparator": {
+    "accuracy": 0.14285714285714285,
+    "accuracy_count": [
+      3,
+      21
+    ],
+    "accuracy_wilson95": [
+      0.04981012499725268,
+      0.34636060280620945
+    ],
+    "ambiguous_count": [
+      0,
+      21
+    ],
+    "ambiguous_rate": 0.0,
+    "application_bug_precision": 0.14285714285714285,
+    "application_bug_precision_count": [
+      3,
+      21
+    ],
+    "application_bug_precision_wilson95": [
+      0.04981012499725268,
+      0.34636060280620945
+    ],
+    "application_bug_recall": 1.0,
+    "application_bug_recall_count": [
+      3,
+      3
+    ],
+    "application_bug_recall_wilson95": [
+      0.4385029682449546,
+      1.0
+    ],
+    "confusion_matrix": {
+      "agent_error": {
+        "agent_error": 0,
+        "ambiguous": 0,
+        "application_bug": 10
+      },
+      "ambiguous": {
+        "agent_error": 0,
+        "ambiguous": 0,
+        "application_bug": 8
+      },
+      "application_bug": {
+        "agent_error": 0,
+        "ambiguous": 0,
+        "application_bug": 3
+      }
+    },
+    "false_bug_report_count": [
+      10,
+      10
+    ],
+    "false_bug_report_rate": 1.0,
+    "false_bug_report_wilson95": [
+      0.7224672001371107,
+      0.9999999999999999
+    ],
+    "macro_f1": 0.08333333333333333,
+    "n": 21,
+    "non_application_false_bug_report_count": [
+      18,
+      18
+    ],
+    "non_application_false_bug_report_rate": 1.0,
+    "non_application_false_bug_report_wilson95": [
+      0.8241207763533425,
+      1.0
+    ]
+  }
+}

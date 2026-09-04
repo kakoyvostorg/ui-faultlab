@@ -110,6 +110,29 @@ def build_report(artifacts_root: str | Path, output: str | Path) -> dict:
     clean = metrics["task_metrics"]
     paired = metrics["paired_terminal_to_active"]
     mcnemar = metrics["mcnemar_terminal_to_active"]
+    showui_section = ""
+    showui_summary_path = artifacts_root / "showui_full_summary.json"
+    if showui_summary_path.exists():
+        showui = json.loads(showui_summary_path.read_text())
+        showui_overall = showui["overall"]
+        showui_ci = wilson_interval(showui_overall["successes"], showui_overall["episodes"])
+        showui_rows = []
+        for task_id, row in sorted(showui["by_task"].items()):
+            showui_rows.append(
+                f"| `{task_id}` | {row['successes']}/{row['episodes']} | {_pct(row['success_rate'])} | "
+                f"{row['vlm_calls']} | {', '.join(f'{key}={value}' for key, value in sorted(row['stop_reasons'].items()))} |"
+            )
+        showui_section = f"""
+## Learned-agent companion
+
+A separate clean, known-good ShowUI-2B run made **{showui_overall['vlm_calls']} real VLM calls** across {showui_overall['episodes']} episodes. It completed **{showui_overall['successes']}/{showui_overall['episodes']} = {_pct(showui_overall['success_rate'])}** tasks, Wilson 95% CI {_ci(showui_ci)}. Failed tasks are labeled `agent_error` because no application fault or agent-fault injector was active.
+
+| task | successes | rate | VLM calls | stop reasons |
+|---|---:|---:|---:|---|
+{chr(10).join(showui_rows)}
+
+This companion run supplies observed learned-agent trajectories; it does not replace the controlled attribution denominator above. See [`SHOWUI_RESULTS.md`](SHOWUI_RESULTS.md) for plots, raw-output analysis, and the visual trace gallery.
+"""
     text = f"""# UI-FaultLab Experimental Report
 
 Generated automatically from machine-readable episode artifacts. No result below was copied by hand.
@@ -139,8 +162,9 @@ Terminal-to-active paired accuracy difference was **{100 * paired['difference']:
 - Faulted task success: {clean['faulted_success_count'][0]}/{clean['faulted_success_count'][1]} = {_pct(clean['faulted_success_rate'])}.
 - Mean steps per episode: {clean['mean_steps']:.2f}; invalid action rate: {_pct(clean['invalid_action_rate'])}; parse failure rate: {_pct(clean['parse_failure_rate'])}.
 - Active probes: {metrics['recovery']['active_probes']} total, {metrics['recovery']['active_probes_per_episode']:.2f} per episode overall; hard cap was one per failed episode.
-- VLM calls: {metrics['cost_latency']['vlm_calls']}; GPU wall-clock: {metrics['cost_latency']['gpu_wall_clock_seconds']:.1f}s; estimated spend: **{metrics['cost_latency']['estimated_cost_rub']:.2f} RUB**.
+- Controlled-benchmark VLM calls: {metrics['cost_latency']['vlm_calls']}; GPU wall-clock: {metrics['cost_latency']['gpu_wall_clock_seconds']:.1f}s; estimated spend: **{metrics['cost_latency']['estimated_cost_rub']:.2f} RUB**.
 - Mean local episode execution latency: {metrics['cost_latency']['mean_execution_latency_ms']:.1f} ms; mean active-probe latency: {metrics['cost_latency']['mean_active_probe_latency_ms']:.1f} ms.
+{showui_section}
 
 ## Failure gallery
 
@@ -152,7 +176,7 @@ Within this controlled synthetic calendar, terminal-only diagnosis over-reported
 
 ## Limitations
 
-- The actor and three principal diagnosers are deterministic, model-free baselines. A real open VLM baseline is separately gated and was not substituted with invented outputs.
+- The controlled actor and three principal diagnosers are deterministic, model-free baselines. The ShowUI companion is a learned actor baseline, not a learned attribution method.
 - Screenshots come from a deterministic renderer synchronized with the same UI transition model as the local web app; browser-pixel parity still requires Playwright/Node on the demo machine.
 - The application, tasks, and faults are synthetic, with one fault family per episode and three state seeds.
 - Confidence intervals quantify binomial uncertainty in this small fixture set; episodes share templates and are not independent real-world products.

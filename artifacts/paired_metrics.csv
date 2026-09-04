@@ -1,0 +1,3 @@
+method,n,accuracy,app_precision,app_recall,false_bug_rate,ambiguous_rate
+terminal_only_comparator,21,0.14285714285714285,0.14285714285714285,1.0,1.0,0.0
+paired_differential,21,0.9523809523809523,1.0,1.0,0.0,0.3333333333333333

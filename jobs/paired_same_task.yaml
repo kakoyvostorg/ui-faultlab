@@ -1,0 +1,31 @@
+name: ui-faultlab-paired-differential-v1
+desc: Twenty-four blinded same-task ShowUI-2B candidate runs with exact-action replay on a known-good reference application.
+cmd: >
+  python3 scripts/run_with_timeout.py
+  --timeout-seconds 3600 --
+  python3 scripts/run_paired_showui.py
+  --config ${PAIRED_CONFIG}
+  --expected-config-hash a59fd48faa3a8b02cb3c3b68a3cf71d91defce8ff8f62a9cca7acc14f637255d
+  --run-root work/paired_same_task_run
+  --summary ${PAIRED_SUMMARY}
+  --archive ${PAIRED_ARCHIVE}
+env:
+  python:
+    type: manual
+    version: "3.12"
+    requirements-file: requirements-showui.txt
+    root-paths:
+      - scripts/run_with_timeout.py
+      - scripts/run_paired_showui.py
+inputs:
+  - configs/paired_same_task_v1.json: PAIRED_CONFIG
+  - requirements-showui.txt
+outputs:
+  - artifacts/paired_same_task_summary.json: PAIRED_SUMMARY
+  - artifacts/paired_same_task_run.tar.gz: PAIRED_ARCHIVE
+cloud-instance-types:
+  - gt4.1
+  - gt4i.1
+graceful-shutdown:
+  signal: SIGTERM
+  timeout: 30s

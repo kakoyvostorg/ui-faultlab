@@ -1,0 +1,41 @@
+{
+  "name": "paired_same_task_differential_v1",
+  "protocol": "showui-candidate-exact-action-reference-replay-v1",
+  "model": "showlab/ShowUI-2B",
+  "model_revision": "cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60",
+  "resolution": [960, 640],
+  "max_consecutive_no_change": 2,
+  "max_total_calls": 160,
+  "hard_runtime_cap_minutes": 60,
+  "estimated_instance": "gt4.1",
+  "hourly_rate_rub": 168.48,
+  "cases": [
+    {"case_id":"create_01","task_id":"create_event","split":"dev","seed":3,"instruction":"Create 'Research Sync 3' on 2026-09-23 at 14:30","target_event_id":null,"expected":{"title":"Research Sync 3","date":"2026-09-23","time":"14:30"},"candidate_fault":null},
+    {"case_id":"create_02","task_id":"create_event","split":"dev","seed":4,"instruction":"Create 'Roadmap Review' on 2026-09-24 at 09:15","target_event_id":null,"expected":{"title":"Roadmap Review","date":"2026-09-24","time":"09:15"},"candidate_fault":"save_noop"},
+    {"case_id":"create_03","task_id":"create_event","split":"validation","seed":5,"instruction":"Create 'Budget Check' on 2026-09-25 at 12:45","target_event_id":null,"expected":{"title":"Budget Check","date":"2026-09-25","time":"12:45"},"candidate_fault":null},
+    {"case_id":"create_04","task_id":"create_event","split":"validation","seed":6,"instruction":"Create 'Launch Briefing' on 2026-09-26 at 16:20","target_event_id":null,"expected":{"title":"Launch Briefing","date":"2026-09-26","time":"16:20"},"candidate_fault":"value_corruption"},
+    {"case_id":"create_05","task_id":"create_event","split":"test","seed":7,"instruction":"Create 'Hiring Debrief' on 2026-09-27 at 10:10","target_event_id":null,"expected":{"title":"Hiring Debrief","date":"2026-09-27","time":"10:10"},"candidate_fault":null},
+    {"case_id":"create_06","task_id":"create_event","split":"test","seed":8,"instruction":"Create 'Metrics Review' on 2026-09-28 at 17:35","target_event_id":null,"expected":{"title":"Metrics Review","date":"2026-09-28","time":"17:35"},"candidate_fault":"save_noop"},
+
+    {"case_id":"attendee_01","task_id":"add_attendee","split":"dev","seed":3,"instruction":"Add ana3@example.com to Design Review and save","target_event_id":"evt-design","expected":{"attendee":"ana3@example.com"},"candidate_fault":"value_corruption"},
+    {"case_id":"attendee_02","task_id":"add_attendee","split":"dev","seed":4,"instruction":"Add boris4@example.com to Planning and save","target_event_id":"evt-planning","expected":{"attendee":"boris4@example.com"},"candidate_fault":null},
+    {"case_id":"attendee_03","task_id":"add_attendee","split":"validation","seed":5,"instruction":"Add clara5@example.com to Deprecated Sync and save","target_event_id":"evt-sync","expected":{"attendee":"clara5@example.com"},"candidate_fault":"save_noop"},
+    {"case_id":"attendee_04","task_id":"add_attendee","split":"validation","seed":6,"instruction":"Add dan6@example.com to Design Review and save","target_event_id":"evt-design","expected":{"attendee":"dan6@example.com"},"candidate_fault":null},
+    {"case_id":"attendee_05","task_id":"add_attendee","split":"test","seed":7,"instruction":"Add eva7@example.com to Planning and save","target_event_id":"evt-planning","expected":{"attendee":"eva7@example.com"},"candidate_fault":"value_corruption"},
+    {"case_id":"attendee_06","task_id":"add_attendee","split":"test","seed":8,"instruction":"Add farid8@example.com to Deprecated Sync and save","target_event_id":"evt-sync","expected":{"attendee":"farid8@example.com"},"candidate_fault":null},
+
+    {"case_id":"reschedule_01","task_id":"reschedule_event","split":"dev","seed":3,"instruction":"Move Design Review to 15:20 and save","target_event_id":"evt-design","expected":{"time":"15:20"},"candidate_fault":null},
+    {"case_id":"reschedule_02","task_id":"reschedule_event","split":"dev","seed":4,"instruction":"Move Planning to 13:40 and save","target_event_id":"evt-planning","expected":{"time":"13:40"},"candidate_fault":"save_noop"},
+    {"case_id":"reschedule_03","task_id":"reschedule_event","split":"validation","seed":5,"instruction":"Move Deprecated Sync to 18:10 and save","target_event_id":"evt-sync","expected":{"time":"18:10"},"candidate_fault":null},
+    {"case_id":"reschedule_04","task_id":"reschedule_event","split":"validation","seed":6,"instruction":"Move Design Review to 08:50 and save","target_event_id":"evt-design","expected":{"time":"08:50"},"candidate_fault":"value_corruption"},
+    {"case_id":"reschedule_05","task_id":"reschedule_event","split":"test","seed":7,"instruction":"Move Planning to 14:25 and save","target_event_id":"evt-planning","expected":{"time":"14:25"},"candidate_fault":null},
+    {"case_id":"reschedule_06","task_id":"reschedule_event","split":"test","seed":8,"instruction":"Move Deprecated Sync to 19:05 and save","target_event_id":"evt-sync","expected":{"time":"19:05"},"candidate_fault":"save_noop"},
+
+    {"case_id":"delete_01","task_id":"delete_event","split":"dev","seed":3,"instruction":"Delete Deprecated Sync and confirm","target_event_id":"evt-sync","expected":{},"candidate_fault":"confirmation_transition_bug"},
+    {"case_id":"delete_02","task_id":"delete_event","split":"dev","seed":4,"instruction":"Delete Planning and confirm","target_event_id":"evt-planning","expected":{},"candidate_fault":null},
+    {"case_id":"delete_03","task_id":"delete_event","split":"validation","seed":5,"instruction":"Delete Design Review and confirm","target_event_id":"evt-design","expected":{},"candidate_fault":"confirmation_transition_bug"},
+    {"case_id":"delete_04","task_id":"delete_event","split":"validation","seed":6,"instruction":"Delete Deprecated Sync and confirm","target_event_id":"evt-sync","expected":{},"candidate_fault":null},
+    {"case_id":"delete_05","task_id":"delete_event","split":"test","seed":7,"instruction":"Delete Planning and confirm","target_event_id":"evt-planning","expected":{},"candidate_fault":"confirmation_transition_bug"},
+    {"case_id":"delete_06","task_id":"delete_event","split":"test","seed":8,"instruction":"Delete Design Review and confirm","target_event_id":"evt-design","expected":{},"candidate_fault":null}
+  ]
+}

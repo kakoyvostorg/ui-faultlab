@@ -1,0 +1,21 @@
+name: ui-faultlab-showui-environment-warmup
+desc: Build the reusable ShowUI Python environment on low-cost CPU before GPU smoke.
+cmd: >
+  python3 scripts/environment_warmup.py
+  --output ${ENV_RESULT}
+env:
+  python:
+    type: manual
+    version: "3.12"
+    requirements-file: requirements-showui.txt
+    root-paths:
+      - scripts/environment_warmup.py
+inputs:
+  - requirements-showui.txt
+outputs:
+  - artifacts/environment_warmup.json: ENV_RESULT
+cloud-instance-types:
+  - c1.4
+graceful-shutdown:
+  signal: SIGTERM
+  timeout: 30s

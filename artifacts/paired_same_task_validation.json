@@ -1,0 +1,25 @@
+{
+  "archive_members": 530,
+  "archive_safe": true,
+  "archive_sha256": "51a5e8a8f6a267ffee95b4fecdc004b77916d046176e05867091164e46d82269",
+  "candidate_successes": 3,
+  "case_count": 24,
+  "config_hash": "a59fd48faa3a8b02cb3c3b68a3cf71d91defce8ff8f62a9cca7acc14f637255d",
+  "failure_count": 21,
+  "gold_labels": {
+    "agent_or_harness": 10,
+    "ambiguous": 8,
+    "application_regression": 3,
+    "no_failure": 3
+  },
+  "predictions": {
+    "agent_or_harness": 11,
+    "ambiguous": 7,
+    "application_regression": 3,
+    "no_failure": 3
+  },
+  "reference_vlm_calls": 0,
+  "status": "validated",
+  "summary_sha256": "289c82dabef6220e5d03f49574a42bf4632216e31a1eb44fce1bb6dec5b49e04",
+  "vlm_calls": 122
+}

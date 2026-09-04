@@ -1,0 +1,59 @@
+{
+  "case_count": 24,
+  "condition_counts": {
+    "clean": 12,
+    "faulted": 12
+  },
+  "config_file_sha256": "7e190e9fb746dd6f6d6e3cfd98e4fca0ab33a6ba89fd518aea252cdf63b3aeb0",
+  "config_hash": "a59fd48faa3a8b02cb3c3b68a3cf71d91defce8ff8f62a9cca7acc14f637255d",
+  "config_path": "configs/paired_same_task_v1.json",
+  "hard_runtime_cap_minutes": 60,
+  "label_isolation": {
+    "diagnosis_hidden_parameters_absent": true,
+    "gold_output_quarantined": "cases/<case_id>/hidden/gold.json",
+    "public_manifest_hidden_fields_absent": true
+  },
+  "max_possible_calls": 156,
+  "max_total_calls": 160,
+  "model": "showlab/ShowUI-2B",
+  "model_revision": "cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60",
+  "protocol": "showui-candidate-exact-action-reference-replay-v1",
+  "split_counts": {
+    "dev": 8,
+    "test": 8,
+    "validation": 8
+  },
+  "status": "frozen",
+  "task_counts": {
+    "add_attendee": 6,
+    "create_event": 6,
+    "delete_event": 6,
+    "reschedule_event": 6
+  },
+  "task_split_condition_counts": {
+    "add_attendee/dev/clean": 1,
+    "add_attendee/dev/faulted": 1,
+    "add_attendee/test/clean": 1,
+    "add_attendee/test/faulted": 1,
+    "add_attendee/validation/clean": 1,
+    "add_attendee/validation/faulted": 1,
+    "create_event/dev/clean": 1,
+    "create_event/dev/faulted": 1,
+    "create_event/test/clean": 1,
+    "create_event/test/faulted": 1,
+    "create_event/validation/clean": 1,
+    "create_event/validation/faulted": 1,
+    "delete_event/dev/clean": 1,
+    "delete_event/dev/faulted": 1,
+    "delete_event/test/clean": 1,
+    "delete_event/test/faulted": 1,
+    "delete_event/validation/clean": 1,
+    "delete_event/validation/faulted": 1,
+    "reschedule_event/dev/clean": 1,
+    "reschedule_event/dev/faulted": 1,
+    "reschedule_event/test/clean": 1,
+    "reschedule_event/test/faulted": 1,
+    "reschedule_event/validation/clean": 1,
+    "reschedule_event/validation/faulted": 1
+  }
+}

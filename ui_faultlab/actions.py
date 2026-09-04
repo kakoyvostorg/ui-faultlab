@@ -4,7 +4,7 @@ from dataclasses import asdict, dataclass
 from typing import Any
 
 
-ALLOWED_TYPES = {"tap", "type", "scroll", "back", "finish"}
+ALLOWED_TYPES = {"tap", "input", "type", "scroll", "enter", "back", "finish"}
 
 
 @dataclass(frozen=True)
@@ -26,6 +26,13 @@ class Action:
                 raise ValueError("tap coordinates must be normalized to [0, 1]")
             if any(v is not None for v in (self.text, self.direction)):
                 raise ValueError("tap is incompatible with text/direction")
+        elif self.type == "input":
+            if self.x is None or self.y is None or self.text is None:
+                raise ValueError("input requires x, y, and text")
+            if not (0.0 <= self.x <= 1.0 and 0.0 <= self.y <= 1.0):
+                raise ValueError("input coordinates must be normalized to [0, 1]")
+            if self.direction is not None:
+                raise ValueError("input is incompatible with direction")
         elif self.type == "type":
             if self.text is None:
                 raise ValueError("type requires text")
@@ -60,4 +67,3 @@ def normalized_to_pixels(x: float, y: float, width: int, height: int) -> tuple[i
     if width <= 0 or height <= 0:
         raise ValueError("viewport must be positive")
     return min(width - 1, round(x * (width - 1))), min(height - 1, round(y * (height - 1)))
-

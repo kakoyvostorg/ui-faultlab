@@ -1,23 +1,57 @@
 {
-  "allow_download": false,
+  "allow_download": true,
   "candidate": "showlab/ShowUI-2B",
-  "estimated_cost_rub": 0.0,
-  "inference_calls": 0,
-  "machine": "arm64",
-  "model_loaded": false,
-  "paid_compute_started": false,
-  "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+  "inference_calls": 2,
+  "machine": "x86_64",
+  "model_loaded": true,
+  "platform": "Linux-5.13.0-40-generic-x86_64-with-glibc2.35",
   "preflight": {
     "dependencies": {
-      "PIL": false,
-      "qwen_vl_utils": false,
-      "torch": false,
-      "transformers": false
+      "PIL": true,
+      "accelerate": true,
+      "qwen_vl_utils": true,
+      "torch": true,
+      "torchvision": true,
+      "transformers": true
     },
-    "ready": false
+    "ready": true
   },
-  "reason": "missing local torch/transformers/Pillow/qwen_vl_utils runtime",
+  "reason": null,
+  "results": [
+    {
+      "instruction": "Create 'Research Sync 1' on 2026-09-21 at 14:30",
+      "latency_ms": 10095.358856999155,
+      "parse_error": null,
+      "parsed_action": {
+        "reason": "ShowUI CLICK",
+        "type": "tap",
+        "x": 0.84,
+        "y": 0.2
+      },
+      "raw_output": "{'action': 'CLICK', 'value': None, 'position': [0.84, 0.2]}",
+      "screenshot_path": "work/model_smoke_inputs/create_event_1/step_000.png",
+      "screenshot_sha256": "cbdf5afa7176b42d051393c27e38eabe64b496194ed10b02fb410de219025522",
+      "seed": 1,
+      "task_id": "create_event"
+    },
+    {
+      "instruction": "Delete Deprecated Sync and confirm",
+      "latency_ms": 4599.0568639999765,
+      "parse_error": null,
+      "parsed_action": {
+        "reason": "ShowUI CLICK",
+        "type": "tap",
+        "x": 0.21,
+        "y": 0.5
+      },
+      "raw_output": "{'action': 'CLICK', 'value': None, 'position': [0.21, 0.5]}",
+      "screenshot_path": "work/model_smoke_inputs/delete_event_1/step_000.png",
+      "screenshot_sha256": "cbdf5afa7176b42d051393c27e38eabe64b496194ed10b02fb410de219025522",
+      "seed": 1,
+      "task_id": "delete_event"
+    }
+  ],
   "revision": "cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60",
-  "status": "blocked",
-  "timestamp": "2026-09-03T14:01:59.176526+00:00"
+  "status": "completed",
+  "timestamp": "2026-09-03T21:01:04.094423+00:00"
 }

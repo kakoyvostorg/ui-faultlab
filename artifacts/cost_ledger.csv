@@ -1,3 +1,15 @@
 timestamp,execution_kind,provider,instance_type,hourly_rate_rub,hard_runtime_cap_hours,forecast_cost_rub,actual_cost_rub,status,note
 2026-09-03T00:00:00+03:00,local_cpu,local,none,0,0,0,0,completed,No paid compute launched
-
+2026-09-03T20:07:00+03:00,vlm_smoke,Yandex DataSphere,gt4.1,168.48,0.05,8.42,0,cancelled,Cancelled during environment install; actual billing pending
+2026-09-03T20:12:58+03:00,environment_warmup,Yandex DataSphere,c1.4,18.72,0.106,1.98,0,failed,Environment built but validation found missing torchvision; actual billing pending
+2026-09-03T20:21:55+03:00,environment_warmup_retry,Yandex DataSphere,c1.4,18.72,0.0882,1.65,0,completed,SUCCESS in 317.4 seconds; actual billing pending
+2026-09-03T20:37:37+03:00,vlm_smoke,Yandex DataSphere,gt4.1_or_gt4i.1,234,0.0914,21.39,0,failed,Zero inference calls; auto-resolved CUDA 13 PyTorch incompatible with CUDA 12.2 driver; billing pending and forecast uses pricier fallback
+2026-09-03T20:48:01+03:00,environment_warmup_cu121,Yandex DataSphere,c1.4,18.72,0.0918,1.72,0,completed,SUCCESS in 330.3 seconds with torch 2.5.1 CUDA 12.1; actual billing pending
+2026-09-03T21:00:46+03:00,vlm_smoke_cu121,Yandex DataSphere,gt4.1_or_gt4i.1,234,0.1299,30.40,0,failed,Zero inference calls; checkpoint torch.load guard requires torch 2.6 due CVE-2025-32434; billing pending and forecast uses pricier fallback
+2026-09-03T21:12:26+03:00,environment_warmup_torch26,Yandex DataSphere,c1.4,18.72,0.0940,1.76,0,completed,SUCCESS in 338.5 seconds with torch 2.6.0 CUDA 11.8; actual billing pending
+2026-09-03T21:20:42+03:00,vlm_smoke_torch26,Yandex DataSphere,gt4.1_or_gt4i.1,234,0.1351,31.62,0,completed,SUCCESS in 486.4 seconds with two inference calls; both raw outputs violated the requested generic JSON contract; billing pending and forecast uses pricier fallback
+2026-09-03T21:34:12+03:00,vlm_smoke_official_protocol,Yandex DataSphere,gt4.1_or_gt4i.1,234,0.0866,20.26,0,failed,Zero inference calls; incompatible slow image processor flag; billing pending and forecast uses pricier fallback
+2026-09-03T21:56:00+03:00,vlm_smoke_official_protocol_fast,Yandex DataSphere,gt4.1_or_gt4i.1,234,0.1395,32.64,0,completed,SUCCESS in 502.1 seconds with two valid parsed CLICK actions; both clicks targeted the task text rendered in the app header; billing pending and forecast uses pricier fallback
+2026-09-03T23:56:22+03:00,vlm_smoke_clean_ui,Yandex DataSphere,gt4.1_or_gt4i.1,234,0.1284,30.06,0,completed,SUCCESS in 462.3 seconds; two valid correctly targeted CLICK actions on task-version 1.1; billing pending and forecast uses pricier fallback
+2026-09-04T00:09:42+03:00,showui_clean_closed_loop,Yandex DataSphere,gt4.1_or_gt4i.1,234,0.1998,46.74,0,completed,SUCCESS in 719.132 seconds; 12 episodes and 53 inference calls; runtime-derived range 33.66-46.74 RUB; actual billing pending
+2026-09-04T04:46:18+03:00,showui_paired_differential,Yandex DataSphere,gt4.1_or_gt4i.1,234,0.2845,66.57,0,completed,SUCCESS in 1024.101 seconds; 24 cases and 122 inference calls; runtime-derived range 47.93-66.57 RUB; actual billing pending

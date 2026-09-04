@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="410" viewBox="0 0 900 410">
+<rect width="900" height="410" fill="#F5F7FB" rx="20"/>
+<text x="40" y="48" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#182542">How episodes ended</text>
+<text x="40" y="76" font-family="system-ui,sans-serif" font-size="14" fill="#68748B">Stop reason is recorded online; no manual relabeling</text>
+<text x="40" y="136" font-family="system-ui,sans-serif" font-size="17" fill="#182542">Task success</text>
+<rect x="330" y="115" width="315" height="31" rx="7" fill="#299770"/>
+<text x="657" y="137" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#182542">3</text>
+<text x="40" y="201" font-family="system-ui,sans-serif" font-size="17" fill="#182542">No-change loop</text>
+<rect x="330" y="180" width="420" height="31" rx="7" fill="#E5A23A"/>
+<text x="762" y="202" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#182542">4</text>
+<text x="40" y="266" font-family="system-ui,sans-serif" font-size="17" fill="#182542">Multi-action parse failure</text>
+<rect x="330" y="245" width="315" height="31" rx="7" fill="#CA414B"/>
+<text x="657" y="267" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#182542">3</text>
+<text x="40" y="331" font-family="system-ui,sans-serif" font-size="17" fill="#182542">Step budget exhausted</text>
+<rect x="330" y="310" width="210" height="31" rx="7" fill="#4669E8"/>
+<text x="552" y="332" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#182542">2</text>
+</svg>

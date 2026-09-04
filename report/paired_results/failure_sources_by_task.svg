@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="410" viewBox="0 0 900 410">
+<rect width="900" height="410" rx="20" fill="#F5F7FB"/>
+<text x="38" y="47" font-family="system-ui,sans-serif" font-size="24" font-weight="700" fill="#182542">Causal outcomes by task family</text>
+<text x="38" y="73" font-family="system-ui,sans-serif" font-size="14" fill="#68748B">Gold labels for candidate failures; successful candidates are omitted</text>
+<text x="38" y="134" font-family="system-ui,sans-serif" font-size="15" fill="#182542">create_event</text>
+<rect x="250.0" y="112" width="285.0" height="31" fill="#4669E8"/>
+<text x="392.5" y="134" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">3</text>
+<rect x="535.0" y="112" width="285.0" height="31" fill="#E5A23A"/>
+<text x="677.5" y="134" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">3</text>
+<text x="38" y="200" font-family="system-ui,sans-serif" font-size="15" fill="#182542">add_attendee</text>
+<rect x="250.0" y="178" width="380.0" height="31" fill="#4669E8"/>
+<text x="440.0" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">4</text>
+<rect x="630.0" y="178" width="190.0" height="31" fill="#E5A23A"/>
+<text x="725.0" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">2</text>
+<text x="38" y="266" font-family="system-ui,sans-serif" font-size="15" fill="#182542">reschedule_event</text>
+<rect x="250.0" y="244" width="285.0" height="31" fill="#4669E8"/>
+<text x="392.5" y="266" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">3</text>
+<rect x="535.0" y="244" width="285.0" height="31" fill="#E5A23A"/>
+<text x="677.5" y="266" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">3</text>
+<text x="38" y="332" font-family="system-ui,sans-serif" font-size="15" fill="#182542">delete_event</text>
+<rect x="250.0" y="310" width="285.0" height="31" fill="#CA414B"/>
+<text x="392.5" y="332" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">3</text>
+<rect x="250" y="360" width="14" height="14" fill="#4669E8"/>
+<text x="271" y="372" font-family="system-ui,sans-serif" font-size="13" fill="#182542">Agent / harness</text>
+<rect x="455" y="360" width="14" height="14" fill="#CA414B"/>
+<text x="476" y="372" font-family="system-ui,sans-serif" font-size="13" fill="#182542">Application regression</text>
+<rect x="660" y="360" width="14" height="14" fill="#E5A23A"/>
+<text x="681" y="372" font-family="system-ui,sans-serif" font-size="13" fill="#182542">Ambiguous</text>
+</svg>

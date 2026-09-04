@@ -5,5 +5,17 @@
   "max_inference_calls": 2,
   "requires_verified_model_card": true,
   "requires_budget_preflight": true,
-  "status": "not_launched"
+  "account_balance_rub": 684,
+  "reserve_rub": 84,
+  "spend_cap_rub": 600,
+  "preferred_instance": "gt4.1",
+  "hourly_rate_rub": 168.48,
+  "fallback_instance": "gt4i.1",
+  "fallback_hourly_rate_rub": 234.0,
+  "hard_runtime_cap_minutes": 45,
+  "maximum_smoke_forecast_rub": 175.5,
+  "status": "completed",
+  "observed_inference_calls": 2,
+  "observed_result": "artifacts/model_smoke_result.json",
+  "note": "Final clean-UI smoke produced two valid correctly targeted clicks on task version 1.1"
 }

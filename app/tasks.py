@@ -17,19 +17,19 @@ class TaskSpec:
 
 TASKS: dict[str, TaskSpec] = {
     "create_event": TaskSpec(
-        "create_event", "1.0", lambda seed: f"Create 'Research Sync {seed}' on 2026-09-{20 + seed:02d} at 14:30",
+        "create_event", "1.1", lambda seed: f"Create 'Research Sync {seed}' on 2026-09-{20 + seed:02d} at 14:30",
         8, ("save_new_event",),
     ),
     "add_attendee": TaskSpec(
-        "add_attendee", "1.0", lambda seed: f"Add user{seed}@example.com to Design Review and save",
+        "add_attendee", "1.1", lambda seed: f"Add user{seed}@example.com to Design Review and save",
         6, ("save_attendee",),
     ),
     "reschedule_event": TaskSpec(
-        "reschedule_event", "1.0", lambda seed: f"Move Design Review to {15 + seed:02d}:00 and save",
+        "reschedule_event", "1.1", lambda seed: f"Move Design Review to {15 + seed:02d}:00 and save",
         6, ("save_reschedule",),
     ),
     "delete_event": TaskSpec(
-        "delete_event", "1.0", lambda seed: "Delete Deprecated Sync and confirm",
+        "delete_event", "1.1", lambda seed: "Delete Deprecated Sync and confirm",
         6, ("confirm_delete",),
     ),
 }
@@ -66,4 +66,3 @@ def success_predicate(task_id: str, seed: int, state: dict) -> bool:
     if task_id == "delete_event":
         return all(e["event_id"] != "evt-sync" for e in events)
     raise KeyError(task_id)
-

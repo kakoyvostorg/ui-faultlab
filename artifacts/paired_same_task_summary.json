@@ -1,0 +1,725 @@
+{
+  "by_task": {
+    "add_attendee": {
+      "attribution_accuracy": 0.8333333333333334,
+      "candidate_successes": 0,
+      "cases": 6,
+      "correct_attributions": 5,
+      "failures": 6,
+      "gold_labels": {
+        "agent_or_harness": 4,
+        "ambiguous": 2
+      },
+      "mean_candidate_latency_ms": 23550.19362033363,
+      "predictions": {
+        "agent_or_harness": 5,
+        "ambiguous": 1
+      },
+      "vlm_calls": 30
+    },
+    "create_event": {
+      "attribution_accuracy": 1.0,
+      "candidate_successes": 0,
+      "cases": 6,
+      "correct_attributions": 6,
+      "failures": 6,
+      "gold_labels": {
+        "agent_or_harness": 3,
+        "ambiguous": 3
+      },
+      "mean_candidate_latency_ms": 29717.972194165366,
+      "predictions": {
+        "agent_or_harness": 3,
+        "ambiguous": 3
+      },
+      "vlm_calls": 29
+    },
+    "delete_event": {
+      "attribution_accuracy": 1.0,
+      "candidate_successes": 3,
+      "cases": 6,
+      "correct_attributions": 3,
+      "failures": 3,
+      "gold_labels": {
+        "application_regression": 3,
+        "no_failure": 3
+      },
+      "mean_candidate_latency_ms": 21533.709393833306,
+      "predictions": {
+        "application_regression": 3,
+        "no_failure": 3
+      },
+      "vlm_calls": 27
+    },
+    "reschedule_event": {
+      "attribution_accuracy": 1.0,
+      "candidate_successes": 0,
+      "cases": 6,
+      "correct_attributions": 6,
+      "failures": 6,
+      "gold_labels": {
+        "agent_or_harness": 3,
+        "ambiguous": 3
+      },
+      "mean_candidate_latency_ms": 28856.438873333598,
+      "predictions": {
+        "agent_or_harness": 3,
+        "ambiguous": 3
+      },
+      "vlm_calls": 36
+    }
+  },
+  "cases": [
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/create_01/candidate/step_001.png",
+        "final_sha256": "31fe014e926aca78864ca2fced73a188915eb8bdb53a4a2c3e5925173f73f765",
+        "latency_ms": 51394.79692099849,
+        "parse_failures": 1,
+        "stop_reason": "parse_error",
+        "task_success": false,
+        "vlm_calls": 2
+      },
+      "case_id": "create_01",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Create 'Research Sync 3' on 2026-09-23 at 14:30",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 1,
+        "final_screenshot": "work/paired_same_task_run/cases/create_01/reference/step_001.png",
+        "final_sha256": "31fe014e926aca78864ca2fced73a188915eb8bdb53a4a2c3e5925173f73f765",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 3,
+      "split": "dev",
+      "task_id": "create_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/create_02/candidate/step_006.png",
+        "final_sha256": "028ee5d73465aee473e6f386cd9074758e252a1090b2ea62be5166eb976f0f5f",
+        "latency_ms": 27558.201927999107,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "create_02",
+      "correct": true,
+      "gold_label": "ambiguous",
+      "instruction": "Create 'Roadmap Review' on 2026-09-24 at 09:15",
+      "prediction": "ambiguous",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/create_02/reference/step_006.png",
+        "final_sha256": "2d744c638262a9d0ce49e311b487b713c7e02bfd750b6e63292b447e43cbe668",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 4,
+      "split": "dev",
+      "task_id": "create_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/create_03/candidate/step_002.png",
+        "final_sha256": "838344aea5efe85d46bb975c70e8547cf516afcd7454cc530ae7b4a22509a201",
+        "latency_ms": 14818.736006998734,
+        "parse_failures": 1,
+        "stop_reason": "parse_error",
+        "task_success": false,
+        "vlm_calls": 3
+      },
+      "case_id": "create_03",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Create 'Budget Check' on 2026-09-25 at 12:45",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 2,
+        "final_screenshot": "work/paired_same_task_run/cases/create_03/reference/step_002.png",
+        "final_sha256": "838344aea5efe85d46bb975c70e8547cf516afcd7454cc530ae7b4a22509a201",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 5,
+      "split": "validation",
+      "task_id": "create_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/create_04/candidate/step_006.png",
+        "final_sha256": "aec0fb1306659842b07573abdb86429e8591db8a60f85d3d9ad1001580888934",
+        "latency_ms": 28061.473730000216,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "create_04",
+      "correct": true,
+      "gold_label": "ambiguous",
+      "instruction": "Create 'Launch Briefing' on 2026-09-26 at 16:20",
+      "prediction": "ambiguous",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/create_04/reference/step_006.png",
+        "final_sha256": "46b2abfb380b4b0fc42e868916fe48fc894afb437984f215bd4af051e0197540",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 6,
+      "split": "validation",
+      "task_id": "create_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/create_05/candidate/step_006.png",
+        "final_sha256": "e2a05b633c7c8d2d364633e34d0a5c79c3e98753abe4e04a3a5e2f2a99f0638f",
+        "latency_ms": 28354.88699599955,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "create_05",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Create 'Hiring Debrief' on 2026-09-27 at 10:10",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/create_05/reference/step_006.png",
+        "final_sha256": "e2a05b633c7c8d2d364633e34d0a5c79c3e98753abe4e04a3a5e2f2a99f0638f",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 7,
+      "split": "test",
+      "task_id": "create_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/create_06/candidate/step_006.png",
+        "final_sha256": "d4985657e82b1a5f03c23b38d8c5d085e82b103b91144a1a0d7fe9bf3ed07a5c",
+        "latency_ms": 28119.737582996095,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "create_06",
+      "correct": true,
+      "gold_label": "ambiguous",
+      "instruction": "Create 'Metrics Review' on 2026-09-28 at 17:35",
+      "prediction": "ambiguous",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/create_06/reference/step_006.png",
+        "final_sha256": "bda53af7728403a60cdb3f7cf40f2ee37625179e27edc43a63a9517d4721a7eb",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 8,
+      "split": "test",
+      "task_id": "create_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_01/candidate/step_006.png",
+        "final_sha256": "01e815a37192db949276875ea7de11aa5b2132c76b0e1d48e82875909f6d8ee4",
+        "latency_ms": 28210.140486000455,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "attendee_01",
+      "correct": false,
+      "gold_label": "ambiguous",
+      "instruction": "Add ana3@example.com to Design Review and save",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_01/reference/step_006.png",
+        "final_sha256": "01e815a37192db949276875ea7de11aa5b2132c76b0e1d48e82875909f6d8ee4",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 3,
+      "split": "dev",
+      "task_id": "add_attendee"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_02/candidate/step_006.png",
+        "final_sha256": "bebd03bc66508b96a170df0acfd2276bb2e94cb91c22762f62c4340dd8990d1f",
+        "latency_ms": 28321.65334899946,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "attendee_02",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Add boris4@example.com to Planning and save",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_02/reference/step_006.png",
+        "final_sha256": "bebd03bc66508b96a170df0acfd2276bb2e94cb91c22762f62c4340dd8990d1f",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 4,
+      "split": "dev",
+      "task_id": "add_attendee"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_03/candidate/step_003.png",
+        "final_sha256": "31fe014e926aca78864ca2fced73a188915eb8bdb53a4a2c3e5925173f73f765",
+        "latency_ms": 13865.15290600255,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 3
+      },
+      "case_id": "attendee_03",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Add clara5@example.com to Deprecated Sync and save",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 3,
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_03/reference/step_003.png",
+        "final_sha256": "31fe014e926aca78864ca2fced73a188915eb8bdb53a4a2c3e5925173f73f765",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 5,
+      "split": "validation",
+      "task_id": "add_attendee"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_04/candidate/step_006.png",
+        "final_sha256": "63a1d82de8fcacad26b105403fa22bb967e1f32cbfa71e422f92ecbf3ad5e03c",
+        "latency_ms": 28447.505720001573,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "attendee_04",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Add dan6@example.com to Design Review and save",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_04/reference/step_006.png",
+        "final_sha256": "63a1d82de8fcacad26b105403fa22bb967e1f32cbfa71e422f92ecbf3ad5e03c",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 6,
+      "split": "validation",
+      "task_id": "add_attendee"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_05/candidate/step_006.png",
+        "final_sha256": "cf3235d33767d818fbab7eeb60609dcc23b82f03ac08584f7341fb2a7182997e",
+        "latency_ms": 28519.024481998713,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "attendee_05",
+      "correct": true,
+      "gold_label": "ambiguous",
+      "instruction": "Add eva7@example.com to Planning and save",
+      "prediction": "ambiguous",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_05/reference/step_006.png",
+        "final_sha256": "5d875ab82b99983acd3539cb8b2f2c366e826f166065276f5ceccb619e53874d",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 7,
+      "split": "test",
+      "task_id": "add_attendee"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_06/candidate/step_003.png",
+        "final_sha256": "31fe014e926aca78864ca2fced73a188915eb8bdb53a4a2c3e5925173f73f765",
+        "latency_ms": 13937.684778999028,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 3
+      },
+      "case_id": "attendee_06",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Add farid8@example.com to Deprecated Sync and save",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 3,
+        "final_screenshot": "work/paired_same_task_run/cases/attendee_06/reference/step_003.png",
+        "final_sha256": "31fe014e926aca78864ca2fced73a188915eb8bdb53a4a2c3e5925173f73f765",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 8,
+      "split": "test",
+      "task_id": "add_attendee"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_01/candidate/step_006.png",
+        "final_sha256": "427f0dfb843747e828c76650d4343d3855b9f4febc551b7f7133111ef578ae82",
+        "latency_ms": 28721.471564003878,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "reschedule_01",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Move Design Review to 15:20 and save",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_01/reference/step_006.png",
+        "final_sha256": "427f0dfb843747e828c76650d4343d3855b9f4febc551b7f7133111ef578ae82",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 3,
+      "split": "dev",
+      "task_id": "reschedule_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_02/candidate/step_006.png",
+        "final_sha256": "028ee5d73465aee473e6f386cd9074758e252a1090b2ea62be5166eb976f0f5f",
+        "latency_ms": 28740.540630000396,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "reschedule_02",
+      "correct": true,
+      "gold_label": "ambiguous",
+      "instruction": "Move Planning to 13:40 and save",
+      "prediction": "ambiguous",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_02/reference/step_006.png",
+        "final_sha256": "7c10ef9a9435dc1f3b054b59d64c163f0040416b61aff0c98188338a4d102e0f",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 4,
+      "split": "dev",
+      "task_id": "reschedule_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_03/candidate/step_006.png",
+        "final_sha256": "cda1d00e864950da11567697395b8b2ea64df10c11437e00d27ec2186e86ae28",
+        "latency_ms": 28745.84313700143,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "reschedule_03",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Move Deprecated Sync to 18:10 and save",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_03/reference/step_006.png",
+        "final_sha256": "cda1d00e864950da11567697395b8b2ea64df10c11437e00d27ec2186e86ae28",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 5,
+      "split": "validation",
+      "task_id": "reschedule_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_04/candidate/step_006.png",
+        "final_sha256": "9adacf3f9032165458ca0c522026f3d9c0b06bebbf986ac842f9cd6fb18b5a2b",
+        "latency_ms": 29276.415314998303,
+        "parse_failures": 0,
+        "stop_reason": "max_steps",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "reschedule_04",
+      "correct": true,
+      "gold_label": "ambiguous",
+      "instruction": "Move Design Review to 08:50 and save",
+      "prediction": "ambiguous",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_04/reference/step_006.png",
+        "final_sha256": "29e021d25a6e078ea8ff94124e396943ee7834e1c41a2c464201b9483185c47a",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 6,
+      "split": "validation",
+      "task_id": "reschedule_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_05/candidate/step_006.png",
+        "final_sha256": "a2f30131f393e56a2e9bf919b15d1020c98792f31859b37d71ad717897a4f618",
+        "latency_ms": 28856.84667499845,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "reschedule_05",
+      "correct": true,
+      "gold_label": "agent_or_harness",
+      "instruction": "Move Planning to 14:25 and save",
+      "prediction": "agent_or_harness",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_05/reference/step_006.png",
+        "final_sha256": "a2f30131f393e56a2e9bf919b15d1020c98792f31859b37d71ad717897a4f618",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 7,
+      "split": "test",
+      "task_id": "reschedule_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_06/candidate/step_006.png",
+        "final_sha256": "d4985657e82b1a5f03c23b38d8c5d085e82b103b91144a1a0d7fe9bf3ed07a5c",
+        "latency_ms": 28797.515918999125,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "reschedule_06",
+      "correct": true,
+      "gold_label": "ambiguous",
+      "instruction": "Move Deprecated Sync to 19:05 and save",
+      "prediction": "ambiguous",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/reschedule_06/reference/step_006.png",
+        "final_sha256": "48695890fe59f1482a0de017b507c7c674c93fedb22add346090f00f6b39b38d",
+        "task_success": false,
+        "vlm_calls": 0
+      },
+      "seed": 8,
+      "split": "test",
+      "task_id": "reschedule_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/delete_01/candidate/step_006.png",
+        "final_sha256": "7a60ecef18913237d542d0cf6bb62062c21dabe0a57b6aac2527e0503b079013",
+        "latency_ms": 28575.58323399826,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "delete_01",
+      "correct": true,
+      "gold_label": "application_regression",
+      "instruction": "Delete Deprecated Sync and confirm",
+      "prediction": "application_regression",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/delete_01/reference/step_006.png",
+        "final_sha256": "035e645ababc0768408cc0273a1a0dc170657b595d9235de75930c7e0c4a9fcf",
+        "task_success": true,
+        "vlm_calls": 0
+      },
+      "seed": 3,
+      "split": "dev",
+      "task_id": "delete_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/delete_02/candidate/step_003.png",
+        "final_sha256": "22fe315a85d4cab286d0983c1711bdf28a79eccf088b0e3a3fe6c8efda098c17",
+        "latency_ms": 14504.127350999624,
+        "parse_failures": 0,
+        "stop_reason": "task_success",
+        "task_success": true,
+        "vlm_calls": 3
+      },
+      "case_id": "delete_02",
+      "correct": true,
+      "gold_label": "no_failure",
+      "instruction": "Delete Planning and confirm",
+      "prediction": "no_failure",
+      "reference": {
+        "actions_replayed": 3,
+        "final_screenshot": "work/paired_same_task_run/cases/delete_02/reference/step_003.png",
+        "final_sha256": "22fe315a85d4cab286d0983c1711bdf28a79eccf088b0e3a3fe6c8efda098c17",
+        "task_success": true,
+        "vlm_calls": 0
+      },
+      "seed": 4,
+      "split": "dev",
+      "task_id": "delete_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/delete_03/candidate/step_006.png",
+        "final_sha256": "72df9828a9865c9ee1ee3ff3a9df992cb7234fab3d2f16aa36f02f9c1d634102",
+        "latency_ms": 28550.623885999812,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "delete_03",
+      "correct": true,
+      "gold_label": "application_regression",
+      "instruction": "Delete Design Review and confirm",
+      "prediction": "application_regression",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/delete_03/reference/step_006.png",
+        "final_sha256": "83839ad40e0acdf7662e8877dc06b1aa60136f3bd804be7e171f13b5772644be",
+        "task_success": true,
+        "vlm_calls": 0
+      },
+      "seed": 5,
+      "split": "validation",
+      "task_id": "delete_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/delete_04/candidate/step_003.png",
+        "final_sha256": "e46b5958c58ff1a536fb31dc0b35a2df9f172846ad99020d84d59ee400f34868",
+        "latency_ms": 14531.155497998043,
+        "parse_failures": 0,
+        "stop_reason": "task_success",
+        "task_success": true,
+        "vlm_calls": 3
+      },
+      "case_id": "delete_04",
+      "correct": true,
+      "gold_label": "no_failure",
+      "instruction": "Delete Deprecated Sync and confirm",
+      "prediction": "no_failure",
+      "reference": {
+        "actions_replayed": 3,
+        "final_screenshot": "work/paired_same_task_run/cases/delete_04/reference/step_003.png",
+        "final_sha256": "e46b5958c58ff1a536fb31dc0b35a2df9f172846ad99020d84d59ee400f34868",
+        "task_success": true,
+        "vlm_calls": 0
+      },
+      "seed": 6,
+      "split": "validation",
+      "task_id": "delete_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/delete_05/candidate/step_006.png",
+        "final_sha256": "922cf66cd7c5a81ab516a25f4b03dba6da1bc4b92d1bb9f9c6e4b2e69d0546cd",
+        "latency_ms": 28519.033526001294,
+        "parse_failures": 0,
+        "stop_reason": "no_change_loop",
+        "task_success": false,
+        "vlm_calls": 6
+      },
+      "case_id": "delete_05",
+      "correct": true,
+      "gold_label": "application_regression",
+      "instruction": "Delete Planning and confirm",
+      "prediction": "application_regression",
+      "reference": {
+        "actions_replayed": 6,
+        "final_screenshot": "work/paired_same_task_run/cases/delete_05/reference/step_006.png",
+        "final_sha256": "0e0b4320779f34c595e92de59d6a20a15738ba1d8886731fe18a4a187f511a33",
+        "task_success": true,
+        "vlm_calls": 0
+      },
+      "seed": 7,
+      "split": "test",
+      "task_id": "delete_event"
+    },
+    {
+      "candidate": {
+        "final_screenshot": "work/paired_same_task_run/cases/delete_06/candidate/step_003.png",
+        "final_sha256": "24443ffa356febda4b6de3a59072fe883b2a995a039228f20d1be6e55c11c25e",
+        "latency_ms": 14521.7328680028,
+        "parse_failures": 0,
+        "stop_reason": "task_success",
+        "task_success": true,
+        "vlm_calls": 3
+      },
+      "case_id": "delete_06",
+      "correct": true,
+      "gold_label": "no_failure",
+      "instruction": "Delete Design Review and confirm",
+      "prediction": "no_failure",
+      "reference": {
+        "actions_replayed": 3,
+        "final_screenshot": "work/paired_same_task_run/cases/delete_06/reference/step_003.png",
+        "final_sha256": "24443ffa356febda4b6de3a59072fe883b2a995a039228f20d1be6e55c11c25e",
+        "task_success": true,
+        "vlm_calls": 0
+      },
+      "seed": 8,
+      "split": "test",
+      "task_id": "delete_event"
+    }
+  ],
+  "config_hash": "a59fd48faa3a8b02cb3c3b68a3cf71d91defce8ff8f62a9cca7acc14f637255d",
+  "failure_count": 21,
+  "model": "showlab/ShowUI-2B",
+  "model_revision": "cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60",
+  "overall": {
+    "attribution_accuracy": 0.9523809523809523,
+    "candidate_successes": 3,
+    "cases": 24,
+    "correct_attributions": 20,
+    "failures": 21,
+    "gold_labels": {
+      "agent_or_harness": 10,
+      "ambiguous": 8,
+      "application_regression": 3,
+      "no_failure": 3
+    },
+    "mean_candidate_latency_ms": 25914.578520416475,
+    "predictions": {
+      "agent_or_harness": 11,
+      "ambiguous": 7,
+      "application_regression": 3,
+      "no_failure": 3
+    },
+    "vlm_calls": 122
+  },
+  "protocol": "showui-candidate-exact-action-reference-replay-v1",
+  "status": "completed"
+}

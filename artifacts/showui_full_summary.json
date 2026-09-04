@@ -1,0 +1,424 @@
+{
+  "by_split": {
+    "dev": {
+      "episodes": 4,
+      "invalid_actions": 1,
+      "loop_repetitions": 0,
+      "mean_inference_latency_ms": 7700.803790500055,
+      "mean_steps": 4.5,
+      "no_change_steps": 3,
+      "parse_failures": 1,
+      "stop_reasons": {
+        "max_steps": 1,
+        "no_change_loop": 1,
+        "parse_error": 1,
+        "task_success": 1
+      },
+      "success_rate": 0.25,
+      "successes": 1,
+      "vlm_calls": 18
+    },
+    "test": {
+      "episodes": 4,
+      "invalid_actions": 1,
+      "loop_repetitions": 1,
+      "mean_inference_latency_ms": 5168.974512294131,
+      "mean_steps": 4.25,
+      "no_change_steps": 5,
+      "parse_failures": 1,
+      "stop_reasons": {
+        "max_steps": 1,
+        "no_change_loop": 1,
+        "parse_error": 1,
+        "task_success": 1
+      },
+      "success_rate": 0.25,
+      "successes": 1,
+      "vlm_calls": 17
+    },
+    "validation": {
+      "episodes": 4,
+      "invalid_actions": 1,
+      "loop_repetitions": 1,
+      "mean_inference_latency_ms": 5069.339022666731,
+      "mean_steps": 4.5,
+      "no_change_steps": 5,
+      "parse_failures": 1,
+      "stop_reasons": {
+        "no_change_loop": 2,
+        "parse_error": 1,
+        "task_success": 1
+      },
+      "success_rate": 0.25,
+      "successes": 1,
+      "vlm_calls": 18
+    }
+  },
+  "by_task": {
+    "add_attendee": {
+      "episodes": 3,
+      "invalid_actions": 0,
+      "loop_repetitions": 1,
+      "mean_inference_latency_ms": 4957.74303888892,
+      "mean_steps": 6,
+      "no_change_steps": 6,
+      "parse_failures": 0,
+      "stop_reasons": {
+        "max_steps": 1,
+        "no_change_loop": 2
+      },
+      "success_rate": 0.0,
+      "successes": 0,
+      "vlm_calls": 18
+    },
+    "create_event": {
+      "episodes": 3,
+      "invalid_actions": 3,
+      "loop_repetitions": 0,
+      "mean_inference_latency_ms": 11506.24266425001,
+      "mean_steps": 2.6666666666666665,
+      "no_change_steps": 3,
+      "parse_failures": 3,
+      "stop_reasons": {
+        "parse_error": 3
+      },
+      "success_rate": 0.0,
+      "successes": 0,
+      "vlm_calls": 8
+    },
+    "delete_event": {
+      "episodes": 3,
+      "invalid_actions": 0,
+      "loop_repetitions": 0,
+      "mean_inference_latency_ms": 5048.093068777841,
+      "mean_steps": 3,
+      "no_change_steps": 0,
+      "parse_failures": 0,
+      "stop_reasons": {
+        "task_success": 3
+      },
+      "success_rate": 1.0,
+      "successes": 3,
+      "vlm_calls": 9
+    },
+    "reschedule_event": {
+      "episodes": 3,
+      "invalid_actions": 0,
+      "loop_repetitions": 1,
+      "mean_inference_latency_ms": 5056.27687294451,
+      "mean_steps": 6,
+      "no_change_steps": 4,
+      "parse_failures": 0,
+      "stop_reasons": {
+        "max_steps": 1,
+        "no_change_loop": 2
+      },
+      "success_rate": 0.0,
+      "successes": 0,
+      "vlm_calls": 18
+    }
+  },
+  "config_hash": "dd6597076cd7b756c413b154cd7fc6d6203a223ca9a2a74d9eec3e330c21a6b2",
+  "episodes": [
+    {
+      "condition": "clean",
+      "episode_id": "showui_ebabe87a3e8f",
+      "final_screenshot": "work/showui_full_run/episodes/showui_ebabe87a3e8f/step_002.png",
+      "final_sha256": "838344aea5efe85d46bb975c70e8547cf516afcd7454cc530ae7b4a22509a201",
+      "gold_label": "agent_error",
+      "invalid_actions": 1,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 21484.700912000033,
+        "total": 64454.102736000095
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 1,
+      "parse_failures": 1,
+      "seed": 0,
+      "split": "dev",
+      "steps": 3,
+      "stop_reason": "parse_error",
+      "task_id": "create_event",
+      "task_success": false,
+      "vlm_calls": 3
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_d5bcb460331e",
+      "final_screenshot": "work/showui_full_run/episodes/showui_d5bcb460331e/step_006.png",
+      "final_sha256": "69541bbbbe5c78082be879beb65c701f73e33de9ae90660a849d714e001f77a4",
+      "gold_label": "agent_error",
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 4854.049213500048,
+        "total": 29124.295281000286
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 2,
+      "parse_failures": 0,
+      "seed": 0,
+      "split": "dev",
+      "steps": 6,
+      "stop_reason": "no_change_loop",
+      "task_id": "add_attendee",
+      "task_success": false,
+      "vlm_calls": 6
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_e46100780f5b",
+      "final_screenshot": "work/showui_full_run/episodes/showui_e46100780f5b/step_006.png",
+      "final_sha256": "f9e8d11384167331010a777341d56c602382f30ec6d97b3c879ff46065f536e3",
+      "gold_label": "agent_error",
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 5023.296701833412,
+        "total": 30139.78021100047
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 0,
+      "parse_failures": 0,
+      "seed": 0,
+      "split": "dev",
+      "steps": 6,
+      "stop_reason": "max_steps",
+      "task_id": "reschedule_event",
+      "task_success": false,
+      "vlm_calls": 6
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_95bfb29f91e4",
+      "final_screenshot": "work/showui_full_run/episodes/showui_95bfb29f91e4/step_003.png",
+      "final_sha256": "44f4d0da85263bf36653c5f390505b865fccf4b3d0af7ad8431caa05c1392147",
+      "gold_label": null,
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 4965.430000333375,
+        "total": 14896.290001000125
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 0,
+      "parse_failures": 0,
+      "seed": 0,
+      "split": "dev",
+      "steps": 3,
+      "stop_reason": "task_success",
+      "task_id": "delete_event",
+      "task_success": true,
+      "vlm_calls": 3
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_2d530ef8196b",
+      "final_screenshot": "work/showui_full_run/episodes/showui_2d530ef8196b/step_002.png",
+      "final_sha256": "838344aea5efe85d46bb975c70e8547cf516afcd7454cc530ae7b4a22509a201",
+      "gold_label": "agent_error",
+      "invalid_actions": 1,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 5289.752030000121,
+        "total": 15869.256090000363
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 1,
+      "parse_failures": 1,
+      "seed": 1,
+      "split": "validation",
+      "steps": 3,
+      "stop_reason": "parse_error",
+      "task_id": "create_event",
+      "task_success": false,
+      "vlm_calls": 3
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_f3d5e6919535",
+      "final_screenshot": "work/showui_full_run/episodes/showui_f3d5e6919535/step_006.png",
+      "final_sha256": "c536dea590696515878f5490b49649cec4ffe8792736dafb3d0f80b9394359b9",
+      "gold_label": "agent_error",
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 4972.014451333507,
+        "total": 29832.086708001043
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 2,
+      "parse_failures": 0,
+      "seed": 1,
+      "split": "validation",
+      "steps": 6,
+      "stop_reason": "no_change_loop",
+      "task_id": "add_attendee",
+      "task_success": false,
+      "vlm_calls": 6
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_79a9a9d6bc52",
+      "final_screenshot": "work/showui_full_run/episodes/showui_79a9a9d6bc52/step_006.png",
+      "final_sha256": "31fe014e926aca78864ca2fced73a188915eb8bdb53a4a2c3e5925173f73f765",
+      "gold_label": "agent_error",
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 5060.095827166606,
+        "total": 30360.574962999635
+      },
+      "loop_repetitions": 1,
+      "no_change_steps": 2,
+      "parse_failures": 0,
+      "seed": 1,
+      "split": "validation",
+      "steps": 6,
+      "stop_reason": "no_change_loop",
+      "task_id": "reschedule_event",
+      "task_success": false,
+      "vlm_calls": 6
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_cbf6a78cee21",
+      "final_screenshot": "work/showui_full_run/episodes/showui_cbf6a78cee21/step_003.png",
+      "final_sha256": "1937fa5aea3a4bd2117dda67d1800069a4e71b0f2ba2558ddd7285dd5a649a42",
+      "gold_label": null,
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 5062.061549000039,
+        "total": 15186.184647000118
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 0,
+      "parse_failures": 0,
+      "seed": 1,
+      "split": "validation",
+      "steps": 3,
+      "stop_reason": "task_success",
+      "task_id": "delete_event",
+      "task_success": true,
+      "vlm_calls": 3
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_93c4c1966153",
+      "final_screenshot": "work/showui_full_run/episodes/showui_93c4c1966153/step_001.png",
+      "final_sha256": "31fe014e926aca78864ca2fced73a188915eb8bdb53a4a2c3e5925173f73f765",
+      "gold_label": "agent_error",
+      "invalid_actions": 1,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 5863.291243999811,
+        "total": 11726.582487999622
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 1,
+      "parse_failures": 1,
+      "seed": 2,
+      "split": "test",
+      "steps": 2,
+      "stop_reason": "parse_error",
+      "task_id": "create_event",
+      "task_success": false,
+      "vlm_calls": 2
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_8707a6d570ba",
+      "final_screenshot": "work/showui_full_run/episodes/showui_8707a6d570ba/step_006.png",
+      "final_sha256": "24e1fba792d4272c68bd85226a95b374cd0be8530048c5a335f81aad8e70eab9",
+      "gold_label": "agent_error",
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 5047.165451833204,
+        "total": 30282.992710999224
+      },
+      "loop_repetitions": 1,
+      "no_change_steps": 2,
+      "parse_failures": 0,
+      "seed": 2,
+      "split": "test",
+      "steps": 6,
+      "stop_reason": "max_steps",
+      "task_id": "add_attendee",
+      "task_success": false,
+      "vlm_calls": 6
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_5f59e596cf37",
+      "final_screenshot": "work/showui_full_run/episodes/showui_5f59e596cf37/step_006.png",
+      "final_sha256": "36394724e04e4fe31bacea374dbf52baef62a4658e7eecbbca27cc7063a50148",
+      "gold_label": "agent_error",
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 5085.438089833512,
+        "total": 30512.62853900107
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 2,
+      "parse_failures": 0,
+      "seed": 2,
+      "split": "test",
+      "steps": 6,
+      "stop_reason": "no_change_loop",
+      "task_id": "reschedule_event",
+      "task_success": false,
+      "vlm_calls": 6
+    },
+    {
+      "condition": "clean",
+      "episode_id": "showui_6e2f0be0b220",
+      "final_screenshot": "work/showui_full_run/episodes/showui_6e2f0be0b220/step_003.png",
+      "final_sha256": "4cead3f4e76226ce477288bd7d4e3617a35ff4bb49b48e92ef20d96614490bab",
+      "gold_label": null,
+      "invalid_actions": 0,
+      "known_good_application": true,
+      "latency_ms": {
+        "mean": 5116.787657000107,
+        "total": 15350.362971000322
+      },
+      "loop_repetitions": 0,
+      "no_change_steps": 0,
+      "parse_failures": 0,
+      "seed": 2,
+      "split": "test",
+      "steps": 3,
+      "stop_reason": "task_success",
+      "task_id": "delete_event",
+      "task_success": true,
+      "vlm_calls": 3
+    }
+  ],
+  "known_good_application": true,
+  "model": "showlab/ShowUI-2B",
+  "model_revision": "cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60",
+  "overall": {
+    "episodes": 12,
+    "invalid_actions": 3,
+    "loop_repetitions": 2,
+    "mean_inference_latency_ms": 5995.002591434008,
+    "mean_steps": 4.416666666666667,
+    "no_change_steps": 13,
+    "parse_failures": 3,
+    "stop_reasons": {
+      "max_steps": 2,
+      "no_change_loop": 4,
+      "parse_error": 3,
+      "task_success": 3
+    },
+    "success_rate": 0.25,
+    "successes": 3,
+    "vlm_calls": 53
+  },
+  "protocol": "official-showui-navigation-v1",
+  "status": "completed",
+  "task_version": "1.1"
+}

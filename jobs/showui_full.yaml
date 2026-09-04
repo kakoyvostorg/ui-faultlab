@@ -1,0 +1,30 @@
+name: ui-faultlab-showui-clean-closed-loop
+desc: Twelve clean closed-loop ShowUI-2B episodes with screenshots, raw actions, latency, and task outcomes.
+cmd: >
+  python3 scripts/run_with_timeout.py
+  --timeout-seconds 2700 --
+  python3 scripts/run_showui_full.py
+  --config ${FULL_CONFIG}
+  --run-root work/showui_full_run
+  --summary ${FULL_SUMMARY}
+  --archive ${FULL_ARCHIVE}
+env:
+  python:
+    type: manual
+    version: "3.12"
+    requirements-file: requirements-showui.txt
+    root-paths:
+      - scripts/run_with_timeout.py
+      - scripts/run_showui_full.py
+inputs:
+  - configs/showui_full.yaml: FULL_CONFIG
+  - requirements-showui.txt
+outputs:
+  - artifacts/showui_full_summary.json: FULL_SUMMARY
+  - artifacts/showui_full_run.tar.gz: FULL_ARCHIVE
+cloud-instance-types:
+  - gt4.1
+  - gt4i.1
+graceful-shutdown:
+  signal: SIGTERM
+  timeout: 30s

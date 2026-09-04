@@ -1,8 +1,26 @@
 name: ui-faultlab-showui-two-inference-smoke
-description: >-
-  Template only. Resolve DATASPHERE_PROJECT_ID, current hourly price, remaining balance,
-  runtime cap, and 100 RUB reserve before launch. Stop after exactly two inference calls.
-command: python scripts/showui_smoke.py --candidate showui --allow-download
-max_inference_calls: 2
-project_id: REQUIRED_AT_LAUNCH_NOT_STORED
-
+desc: Exactly two ShowUI-2B calls; 45-minute external timeout and validation-only inputs.
+cmd: >
+  python3 scripts/run_with_timeout.py
+  --timeout-seconds 2700 --
+  python3 scripts/showui_smoke.py
+  --allow-download
+  --output ${SMOKE_RESULT}
+env:
+  python:
+    type: manual
+    version: "3.12"
+    requirements-file: requirements-showui.txt
+    root-paths:
+      - scripts/run_with_timeout.py
+      - scripts/showui_smoke.py
+inputs:
+  - requirements-showui.txt
+outputs:
+  - artifacts/model_smoke_result.json: SMOKE_RESULT
+cloud-instance-types:
+  - gt4.1
+  - gt4i.1
+graceful-shutdown:
+  signal: SIGTERM
+  timeout: 30s

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+<rect width="900" height="300" rx="20" fill="#F5F7FB"/>
+<text x="38" y="47" font-family="system-ui,sans-serif" font-size="24" font-weight="700" fill="#182542">Failure-attribution accuracy</text>
+<text x="38" y="73" font-family="system-ui,sans-serif" font-size="14" fill="#68748B">21 observed ShowUI failures · Wilson 95% intervals</text>
+<text x="38" y="135" font-family="system-ui,sans-serif" font-size="16" fill="#182542">Terminal-only comparator</text>
+<rect x="275" y="112" width="560" height="32" rx="7" fill="#E7EBF5"/>
+<rect x="275" y="112" width="80.0" height="32" rx="7" fill="#CA414B"/>
+<line x1="302.9" y1="128" x2="469.0" y2="128" stroke="#182542" stroke-width="3"/>
+<text x="850" y="135" font-family="system-ui,sans-serif" font-size="15" font-weight="700" text-anchor="end" fill="#182542">14.3%</text>
+<text x="38" y="217" font-family="system-ui,sans-serif" font-size="16" fill="#182542">Paired differential replay</text>
+<rect x="275" y="194" width="560" height="32" rx="7" fill="#E7EBF5"/>
+<rect x="275" y="194" width="533.3" height="32" rx="7" fill="#299770"/>
+<line x1="708.1" y1="210" x2="830.3" y2="210" stroke="#182542" stroke-width="3"/>
+<text x="850" y="217" font-family="system-ui,sans-serif" font-size="15" font-weight="700" text-anchor="end" fill="#182542">95.2%</text>
+</svg>
