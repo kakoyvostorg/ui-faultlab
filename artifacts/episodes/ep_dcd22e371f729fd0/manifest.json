@@ -1,0 +1,21 @@
+{
+  "condition": "clean",
+  "config_hash": "1fbc7b6cc0d1f37f8c70223fa4ec227c29ec5cdb14e9cd5230cabaf9d2829b0e",
+  "device_scale_factor": 1,
+  "end_timestamp": "2026-09-03T14:02:29.049407+00:00",
+  "episode_id": "ep_dcd22e371f729fd0",
+  "git_commit": null,
+  "model": "scripted_oracle",
+  "model_revision": "builtin-v1",
+  "prompt_hash": "705a93257e1b7386bbf5777dc1d82b82b63ca8938d50c6adc4b3dfb78075c386",
+  "resolution": [
+    960,
+    640
+  ],
+  "seed": 2,
+  "split": "test",
+  "start_timestamp": "2026-09-03T14:02:28.914920+00:00",
+  "status": "completed",
+  "task_id": "create_event",
+  "task_version": "1.0"
+}

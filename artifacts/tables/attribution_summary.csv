@@ -1,0 +1,5 @@
+method,n,bug_precision,bug_recall,macro_f1,accuracy,false_bug_report_rate,ambiguous_rate
+terminal,24,0.5,1.0,0.2222222222222222,0.5,1.0,0.0
+trajectory,24,0.75,1.0,0.5523809523809523,0.8333333333333334,0.3333333333333333,0.0
+active,24,1.0,1.0,0.6666666666666666,1.0,0.0,0.0
+oracle,24,1.0,1.0,0.6666666666666666,1.0,0.0,0.0

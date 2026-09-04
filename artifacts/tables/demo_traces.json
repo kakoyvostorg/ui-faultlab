@@ -1,0 +1,26 @@
+[
+  {
+    "episode_id": "ep_c5e089982aee18ad",
+    "fault_type": "wrong_candidate",
+    "gold_label": "agent_error",
+    "rank": 1,
+    "task_id": "add_attendee",
+    "why": "terminal/trajectory comparison plus one visual counterfactual"
+  },
+  {
+    "episode_id": "ep_07a39d02bc367244",
+    "fault_type": "duplicate_action",
+    "gold_label": "agent_error",
+    "rank": 2,
+    "task_id": "delete_event",
+    "why": "terminal/trajectory comparison plus one visual counterfactual"
+  },
+  {
+    "episode_id": "ep_7a3ca36e5fdc0d86",
+    "fault_type": "confirmation_transition_bug",
+    "gold_label": "application_bug",
+    "rank": 3,
+    "task_id": "delete_event",
+    "why": "terminal/trajectory comparison plus one visual counterfactual"
+  }
+]

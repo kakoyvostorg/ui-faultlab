@@ -1,0 +1,5 @@
+{
+  "family": "agent_fault",
+  "fault_type": "coordinate_jitter",
+  "gold_label": "agent_error"
+}

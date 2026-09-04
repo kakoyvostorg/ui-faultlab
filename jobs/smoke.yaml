@@ -1,0 +1,8 @@
+name: ui-faultlab-showui-two-inference-smoke
+description: >-
+  Template only. Resolve DATASPHERE_PROJECT_ID, current hourly price, remaining balance,
+  runtime cap, and 100 RUB reserve before launch. Stop after exactly two inference calls.
+command: python scripts/showui_smoke.py --candidate showui --allow-download
+max_inference_calls: 2
+project_id: REQUIRED_AT_LAUNCH_NOT_STORED
+

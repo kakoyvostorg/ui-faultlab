@@ -1,0 +1,11 @@
+{
+  "confidence": 0.58,
+  "evidence_frame_ids": [
+    "artifacts/episodes/ep_e89a86ddd33801be/step_000.png",
+    "artifacts/episodes/ep_e89a86ddd33801be/step_001.png"
+  ],
+  "first_suspected_step": 0,
+  "hypothesis": "Trajectory is coherent but final state is incorrect",
+  "label": "application_bug",
+  "raw_output": "deterministic-trajectory-v1"
+}

@@ -1,0 +1,12 @@
+let model=null;
+let fieldTimer=null;
+async function post(path,payload){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});model=await r.json();render()}
+async function load(){model=await (await fetch('/api/state')).json();render()}
+function tap(x,y,reason){return post('/api/action',{type:'tap',x,y,reason})}
+function typeText(text,reason){return post('/api/action',{type:'type',text,reason})}
+async function setField(y,value,key){await post('/api/action',{type:'tap',x:.4,y,reason:`focus ${key}`});await post('/api/action',{type:'type',text:value,reason:`enter ${key}`})}
+function queueField(y,value,key){clearTimeout(fieldTimer);fieldTimer=setTimeout(()=>setField(y,value,key),120)}
+function render(){const s=model.state,root=document.querySelector('#app');document.querySelector('#instruction').textContent=model.task.instruction;if(s.screen==='calendar'){root.innerHTML=`<div class="toolbar"><button onclick="tap(.82,.15,'new event')">+ New event</button></div>${s.events.map((e,i)=>`<article class="event" onclick="tap(.3,${.34+i*.18},'open event')"><h2>${esc(e.title)}</h2><div class="muted">${esc(e.date)} · ${esc(e.time)} · ${e.attendees.length} attendees</div></article>`).join('')}`;}else{const d=s.draft;root.innerHTML=`<section class="panel"><h2>${s.selected_event_id?'Edit':'Create'} event</h2>${field('title','Title',d.title,.35)}${field('date','Date',d.date,.49)}${field('time','Time',d.time,.62)}${field('attendees','Attendees',d.attendees.join(', '),.75)}<div class="actions">${s.selected_event_id?`<button class="danger" onclick="tap(.25,.88,'delete')">Delete</button>`:'<span></span>'}<button onclick="tap(.72,.88,'save')">Save</button></div></section>`;}if(s.confirm_delete)root.insertAdjacentHTML('beforeend','<div class="modal"><div><h2>Delete this event?</h2><p>This cannot be undone.</p><button class="danger" onclick="tap(.65,.65,\'confirm delete\')">Confirm</button></div></div>');if(s.toast)root.insertAdjacentHTML('beforeend',`<div class="toast">${esc(s.toast)}</div>`)}
+function field(key,label,value,y){return `<label class="field">${label}<input value="${esc(value)}" oninput="queueField(${y},this.value,'${key}')"></label>`}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.querySelector('#reset').onclick=()=>post('/api/reset',{task_id:document.querySelector('#task').value,seed:0});load();

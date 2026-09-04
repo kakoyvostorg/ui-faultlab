@@ -1,0 +1,12 @@
+{
+  "confidence": 0.9,
+  "evidence": [
+    "artifacts/episodes/ep_b6c4de033d426301/step_003.png",
+    "artifacts/episodes/ep_b6c4de033d426301/probe/step_003.png"
+  ],
+  "first_suspected_step": 2,
+  "hypothesis": "Counterfactual intended action changed the visual transition",
+  "label": "agent_error",
+  "probes_used": 1,
+  "raw_output": "deterministic-active-v1"
+}

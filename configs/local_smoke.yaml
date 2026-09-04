@@ -1,0 +1,9 @@
+{
+  "name": "local_smoke",
+  "seeds": [0],
+  "tasks": ["create_event", "add_attendee", "reschedule_event", "delete_event"],
+  "conditions": ["clean", "agent_fault", "application_fault"],
+  "resolution": [960, 640],
+  "max_probes": 1,
+  "agent": {"name": "scripted_oracle", "revision": "builtin-v1"}
+}

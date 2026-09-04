@@ -1,0 +1,8 @@
+{
+  "confidence": 0.5,
+  "evidence": [
+    "artifacts/episodes/ep_90498304f9e49d6c/step_005.png"
+  ],
+  "label": "ambiguous",
+  "raw_output": "deterministic-terminal-v1"
+}

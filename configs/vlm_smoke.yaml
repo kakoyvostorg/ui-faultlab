@@ -1,0 +1,9 @@
+{
+  "name": "showui_2b_two_inference_smoke",
+  "model": "showlab/ShowUI-2B",
+  "revision": "cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60",
+  "max_inference_calls": 2,
+  "requires_verified_model_card": true,
+  "requires_budget_preflight": true,
+  "status": "not_launched"
+}

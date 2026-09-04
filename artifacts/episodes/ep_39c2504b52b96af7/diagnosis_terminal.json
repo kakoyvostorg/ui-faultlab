@@ -1,0 +1,8 @@
+{
+  "confidence": 0.55,
+  "evidence": [
+    "artifacts/episodes/ep_39c2504b52b96af7/step_009.png"
+  ],
+  "label": "application_bug",
+  "raw_output": "deterministic-terminal-v1"
+}

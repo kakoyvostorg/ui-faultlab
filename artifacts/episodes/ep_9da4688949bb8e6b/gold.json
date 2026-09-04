@@ -1,0 +1,5 @@
+{
+  "family": "application_fault",
+  "fault_type": "confirmation_transition_bug",
+  "gold_label": "application_bug"
+}

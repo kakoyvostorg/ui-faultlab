@@ -1,0 +1,44 @@
+{
+  "active_cloud_job_status": "not_queryable_no_datasphere_access; no job launched by this project",
+  "actual_spend_rub": 0.0,
+  "local_acceptance_checks": {
+    "all_clean_tasks_succeed": true,
+    "all_fault_fixtures_change_outcome": true,
+    "complete_machine_readable_bundles": true,
+    "episode_count_at_least_36": true,
+    "failure_gallery_at_least_six": true,
+    "four_tasks": true,
+    "freeze_exists": true,
+    "report_metrics_exist": true,
+    "spend_within_700_rub": true,
+    "test_access_logged": true,
+    "three_agent_faults": true,
+    "three_application_faults": true,
+    "three_diagnoses_for_same_failures": true
+  },
+  "local_acceptance_passed": true,
+  "open_vlm_baseline_completed": false,
+  "open_vlm_gate": {
+    "allow_download": false,
+    "candidate": "showlab/ShowUI-2B",
+    "estimated_cost_rub": 0.0,
+    "inference_calls": 0,
+    "machine": "arm64",
+    "model_loaded": false,
+    "paid_compute_started": false,
+    "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "preflight": {
+      "dependencies": {
+        "PIL": false,
+        "qwen_vl_utils": false,
+        "torch": false,
+        "transformers": false
+      },
+      "ready": false
+    },
+    "reason": "missing local torch/transformers/Pillow/qwen_vl_utils runtime",
+    "revision": "cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60",
+    "status": "blocked",
+    "timestamp": "2026-09-03T14:01:59.176526+00:00"
+  }
+}

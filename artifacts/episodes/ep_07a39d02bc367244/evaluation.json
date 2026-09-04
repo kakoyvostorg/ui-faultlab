@@ -1,0 +1,62 @@
+{
+  "condition": "agent_fault",
+  "episode_id": "ep_07a39d02bc367244",
+  "estimated_cost_rub": 0.0,
+  "gold_fault_type": "duplicate_action",
+  "gold_label": "agent_error",
+  "invalid_actions": 0,
+  "latency_ms": {
+    "active_probe": 11.01145800203085,
+    "execution": 48.68124984204769
+  },
+  "loop_repetitions": 1,
+  "parse_failures": 0,
+  "predictions": {
+    "active": {
+      "confidence": 0.9,
+      "evidence": [
+        "artifacts/episodes/ep_07a39d02bc367244/step_003.png",
+        "artifacts/episodes/ep_07a39d02bc367244/probe/step_003.png"
+      ],
+      "first_suspected_step": 2,
+      "hypothesis": "Counterfactual intended action changed the visual transition",
+      "label": "agent_error",
+      "probes_used": 1,
+      "raw_output": "deterministic-active-v1"
+    },
+    "oracle": {
+      "confidence": 1.0,
+      "evidence": [
+        "privileged fault metadata"
+      ],
+      "label": "agent_error",
+      "mode": "oracle_only"
+    },
+    "terminal": {
+      "confidence": 0.55,
+      "evidence": [
+        "artifacts/episodes/ep_07a39d02bc367244/step_004.png"
+      ],
+      "label": "application_bug",
+      "raw_output": "deterministic-terminal-v1"
+    },
+    "trajectory": {
+      "confidence": 0.58,
+      "evidence_frame_ids": [
+        "artifacts/episodes/ep_07a39d02bc367244/step_000.png",
+        "artifacts/episodes/ep_07a39d02bc367244/step_001.png"
+      ],
+      "first_suspected_step": 0,
+      "hypothesis": "Trajectory is coherent but final state is incorrect",
+      "label": "application_bug",
+      "raw_output": "deterministic-trajectory-v1"
+    }
+  },
+  "seed": 2,
+  "split": "test",
+  "steps": 4,
+  "task_id": "delete_event",
+  "task_success": false,
+  "visual_tokens": null,
+  "vlm_calls": 0
+}

@@ -1,0 +1,54 @@
+{
+  "condition": "clean",
+  "episode_id": "ep_8d3b681cf1207c81",
+  "estimated_cost_rub": 0.0,
+  "gold_fault_type": null,
+  "gold_label": "ambiguous",
+  "invalid_actions": 0,
+  "latency_ms": {
+    "active_probe": 0.0,
+    "execution": 45.14208307955414
+  },
+  "loop_repetitions": 0,
+  "parse_failures": 0,
+  "predictions": {
+    "active": {
+      "confidence": 0.5,
+      "evidence": [],
+      "label": "ambiguous",
+      "probes_used": 0,
+      "raw_output": "deterministic-active-v1"
+    },
+    "oracle": {
+      "confidence": 1.0,
+      "evidence": [
+        "privileged fault metadata"
+      ],
+      "label": "ambiguous",
+      "mode": "oracle_only"
+    },
+    "terminal": {
+      "confidence": 0.5,
+      "evidence": [
+        "artifacts/episodes/ep_8d3b681cf1207c81/step_004.png"
+      ],
+      "label": "ambiguous",
+      "raw_output": "deterministic-terminal-v1"
+    },
+    "trajectory": {
+      "confidence": 0.5,
+      "evidence_frame_ids": [],
+      "first_suspected_step": null,
+      "hypothesis": "No failure to attribute",
+      "label": "ambiguous",
+      "raw_output": "deterministic-trajectory-v1"
+    }
+  },
+  "seed": 2,
+  "split": "test",
+  "steps": 4,
+  "task_id": "delete_event",
+  "task_success": true,
+  "visual_tokens": null,
+  "vlm_calls": 0
+}

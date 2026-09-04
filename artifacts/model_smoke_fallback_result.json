@@ -1,0 +1,23 @@
+{
+  "allow_download": false,
+  "candidate": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "estimated_cost_rub": 0.0,
+  "inference_calls": 0,
+  "machine": "arm64",
+  "model_loaded": false,
+  "paid_compute_started": false,
+  "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+  "preflight": {
+    "dependencies": {
+      "PIL": false,
+      "qwen_vl_utils": false,
+      "torch": false,
+      "transformers": false
+    },
+    "ready": false
+  },
+  "reason": "missing local torch/transformers/Pillow/qwen_vl_utils runtime",
+  "revision": null,
+  "status": "blocked",
+  "timestamp": "2026-09-03T14:01:59.176519+00:00"
+}

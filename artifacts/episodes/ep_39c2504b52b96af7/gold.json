@@ -1,0 +1,5 @@
+{
+  "family": "agent_fault",
+  "fault_type": "wrong_candidate",
+  "gold_label": "agent_error"
+}

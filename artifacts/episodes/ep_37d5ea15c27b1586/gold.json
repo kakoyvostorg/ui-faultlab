@@ -1,0 +1,5 @@
+{
+  "family": "application_fault",
+  "fault_type": "save_noop",
+  "gold_label": "application_bug"
+}

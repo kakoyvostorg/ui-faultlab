@@ -1,0 +1,11 @@
+{
+  "confidence": 0.72,
+  "evidence_frame_ids": [
+    "artifacts/episodes/ep_e3aa61948550bd8f/step_000.png",
+    "artifacts/episodes/ep_e3aa61948550bd8f/step_001.png"
+  ],
+  "first_suspected_step": 0,
+  "hypothesis": "Requested UI transition did not appear",
+  "label": "agent_error",
+  "raw_output": "deterministic-trajectory-v1"
+}

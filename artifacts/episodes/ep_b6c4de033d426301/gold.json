@@ -1,0 +1,5 @@
+{
+  "family": "agent_fault",
+  "fault_type": "duplicate_action",
+  "gold_label": "agent_error"
+}

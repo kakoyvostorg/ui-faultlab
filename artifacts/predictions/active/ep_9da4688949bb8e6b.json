@@ -1,0 +1,12 @@
+{
+  "confidence": 0.82,
+  "evidence": [
+    "artifacts/episodes/ep_9da4688949bb8e6b/step_001.png",
+    "artifacts/episodes/ep_9da4688949bb8e6b/probe/step_001.png"
+  ],
+  "first_suspected_step": 0,
+  "hypothesis": "Counterfactual replay reproduced the failed transition",
+  "label": "application_bug",
+  "probes_used": 1,
+  "raw_output": "deterministic-active-v1"
+}

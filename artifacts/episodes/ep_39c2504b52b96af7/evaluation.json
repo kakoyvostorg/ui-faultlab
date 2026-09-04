@@ -1,0 +1,62 @@
+{
+  "condition": "agent_fault",
+  "episode_id": "ep_39c2504b52b96af7",
+  "estimated_cost_rub": 0.0,
+  "gold_fault_type": "wrong_candidate",
+  "gold_label": "agent_error",
+  "invalid_actions": 0,
+  "latency_ms": {
+    "active_probe": 10.691166040487587,
+    "execution": 103.38408325333148
+  },
+  "loop_repetitions": 0,
+  "parse_failures": 0,
+  "predictions": {
+    "active": {
+      "confidence": 0.9,
+      "evidence": [
+        "artifacts/episodes/ep_39c2504b52b96af7/step_002.png",
+        "artifacts/episodes/ep_39c2504b52b96af7/probe/step_002.png"
+      ],
+      "first_suspected_step": 1,
+      "hypothesis": "Counterfactual intended action changed the visual transition",
+      "label": "agent_error",
+      "probes_used": 1,
+      "raw_output": "deterministic-active-v1"
+    },
+    "oracle": {
+      "confidence": 1.0,
+      "evidence": [
+        "privileged fault metadata"
+      ],
+      "label": "agent_error",
+      "mode": "oracle_only"
+    },
+    "terminal": {
+      "confidence": 0.55,
+      "evidence": [
+        "artifacts/episodes/ep_39c2504b52b96af7/step_009.png"
+      ],
+      "label": "application_bug",
+      "raw_output": "deterministic-terminal-v1"
+    },
+    "trajectory": {
+      "confidence": 0.72,
+      "evidence_frame_ids": [
+        "artifacts/episodes/ep_39c2504b52b96af7/step_003.png",
+        "artifacts/episodes/ep_39c2504b52b96af7/step_004.png"
+      ],
+      "first_suspected_step": 3,
+      "hypothesis": "Requested UI transition did not appear",
+      "label": "agent_error",
+      "raw_output": "deterministic-trajectory-v1"
+    }
+  },
+  "seed": 1,
+  "split": "validation",
+  "steps": 9,
+  "task_id": "create_event",
+  "task_success": false,
+  "visual_tokens": null,
+  "vlm_calls": 0
+}

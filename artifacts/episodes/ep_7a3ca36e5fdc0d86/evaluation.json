@@ -1,0 +1,62 @@
+{
+  "condition": "application_fault",
+  "episode_id": "ep_7a3ca36e5fdc0d86",
+  "estimated_cost_rub": 0.0,
+  "gold_fault_type": "confirmation_transition_bug",
+  "gold_label": "application_bug",
+  "invalid_actions": 0,
+  "latency_ms": {
+    "active_probe": 11.207707924768329,
+    "execution": 46.55591701157391
+  },
+  "loop_repetitions": 0,
+  "parse_failures": 0,
+  "predictions": {
+    "active": {
+      "confidence": 0.82,
+      "evidence": [
+        "artifacts/episodes/ep_7a3ca36e5fdc0d86/step_001.png",
+        "artifacts/episodes/ep_7a3ca36e5fdc0d86/probe/step_001.png"
+      ],
+      "first_suspected_step": 0,
+      "hypothesis": "Counterfactual replay reproduced the failed transition",
+      "label": "application_bug",
+      "probes_used": 1,
+      "raw_output": "deterministic-active-v1"
+    },
+    "oracle": {
+      "confidence": 1.0,
+      "evidence": [
+        "privileged fault metadata"
+      ],
+      "label": "application_bug",
+      "mode": "oracle_only"
+    },
+    "terminal": {
+      "confidence": 0.55,
+      "evidence": [
+        "artifacts/episodes/ep_7a3ca36e5fdc0d86/step_004.png"
+      ],
+      "label": "application_bug",
+      "raw_output": "deterministic-terminal-v1"
+    },
+    "trajectory": {
+      "confidence": 0.58,
+      "evidence_frame_ids": [
+        "artifacts/episodes/ep_7a3ca36e5fdc0d86/step_000.png",
+        "artifacts/episodes/ep_7a3ca36e5fdc0d86/step_001.png"
+      ],
+      "first_suspected_step": 0,
+      "hypothesis": "Trajectory is coherent but final state is incorrect",
+      "label": "application_bug",
+      "raw_output": "deterministic-trajectory-v1"
+    }
+  },
+  "seed": 2,
+  "split": "test",
+  "steps": 4,
+  "task_id": "delete_event",
+  "task_success": false,
+  "visual_tokens": null,
+  "vlm_calls": 0
+}

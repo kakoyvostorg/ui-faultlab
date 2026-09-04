@@ -1,0 +1,21 @@
+{
+  "condition": "application_fault",
+  "config_hash": "1fbc7b6cc0d1f37f8c70223fa4ec227c29ec5cdb14e9cd5230cabaf9d2829b0e",
+  "device_scale_factor": 1,
+  "end_timestamp": "2026-09-03T14:02:23.844796+00:00",
+  "episode_id": "ep_ed9f48fa2e9cb4c3",
+  "git_commit": null,
+  "model": "scripted_oracle",
+  "model_revision": "builtin-v1",
+  "prompt_hash": "705a93257e1b7386bbf5777dc1d82b82b63ca8938d50c6adc4b3dfb78075c386",
+  "resolution": [
+    960,
+    640
+  ],
+  "seed": 1,
+  "split": "validation",
+  "start_timestamp": "2026-09-03T14:02:23.747040+00:00",
+  "status": "completed",
+  "task_id": "add_attendee",
+  "task_version": "1.0"
+}

@@ -1,0 +1,8 @@
+name: ui-faultlab-experiment-t4
+description: >-
+  Disabled template. Do not launch until the model smoke succeeds and the cost preflight
+  is appended to artifacts/cost_ledger.csv. One GPU job maximum; 700 RUB absolute cap.
+enabled: false
+depends_on: ui-faultlab-showui-two-inference-smoke
+project_id: REQUIRED_AT_LAUNCH_NOT_STORED
+

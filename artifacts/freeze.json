@@ -1,0 +1,27 @@
+{
+  "config_hash": "1fbc7b6cc0d1f37f8c70223fa4ec227c29ec5cdb14e9cd5230cabaf9d2829b0e",
+  "coordinate_preprocessing": "normalized [0,1] to viewport pixels",
+  "fault_taxonomy": {
+    "agent": [
+      "coordinate_jitter",
+      "wrong_candidate",
+      "duplicate_action"
+    ],
+    "application": [
+      "save_noop",
+      "value_corruption",
+      "confirmation_transition_bug"
+    ]
+  },
+  "max_probes": 1,
+  "model_revision": "builtin-v1",
+  "parser": {
+    "format_retries": 1,
+    "strict_json": true
+  },
+  "primary_metric": "application_bug_precision",
+  "prompts": "deterministic-v1",
+  "report_schema": "report-v1",
+  "thresholds": {},
+  "timestamp": "2026-09-03T14:02:24.372394+00:00"
+}

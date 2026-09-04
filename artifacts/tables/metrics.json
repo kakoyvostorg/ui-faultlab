@@ -1,0 +1,886 @@
+{
+  "attribution": {
+    "active": {
+      "accuracy": 1.0,
+      "accuracy_count": [
+        24,
+        24
+      ],
+      "accuracy_wilson95": [
+        0.8620237953250198,
+        1.0
+      ],
+      "ambiguous_count": [
+        0,
+        24
+      ],
+      "ambiguous_rate": 0.0,
+      "application_bug_precision": 1.0,
+      "application_bug_precision_count": [
+        12,
+        12
+      ],
+      "application_bug_precision_wilson95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "application_bug_recall": 1.0,
+      "application_bug_recall_count": [
+        12,
+        12
+      ],
+      "application_bug_recall_wilson95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "confusion_matrix": {
+        "agent_error": {
+          "agent_error": 12,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "ambiguous": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "application_bug": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 12
+        }
+      },
+      "false_bug_report_count": [
+        0,
+        12
+      ],
+      "false_bug_report_rate": 0.0,
+      "false_bug_report_wilson95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ],
+      "macro_f1": 0.6666666666666666,
+      "n": 24
+    },
+    "oracle": {
+      "accuracy": 1.0,
+      "accuracy_count": [
+        24,
+        24
+      ],
+      "accuracy_wilson95": [
+        0.8620237953250198,
+        1.0
+      ],
+      "ambiguous_count": [
+        0,
+        24
+      ],
+      "ambiguous_rate": 0.0,
+      "application_bug_precision": 1.0,
+      "application_bug_precision_count": [
+        12,
+        12
+      ],
+      "application_bug_precision_wilson95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "application_bug_recall": 1.0,
+      "application_bug_recall_count": [
+        12,
+        12
+      ],
+      "application_bug_recall_wilson95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "confusion_matrix": {
+        "agent_error": {
+          "agent_error": 12,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "ambiguous": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "application_bug": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 12
+        }
+      },
+      "false_bug_report_count": [
+        0,
+        12
+      ],
+      "false_bug_report_rate": 0.0,
+      "false_bug_report_wilson95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ],
+      "macro_f1": 0.6666666666666666,
+      "n": 24
+    },
+    "terminal": {
+      "accuracy": 0.5,
+      "accuracy_count": [
+        12,
+        24
+      ],
+      "accuracy_wilson95": [
+        0.3142742581957335,
+        0.6857257418042665
+      ],
+      "ambiguous_count": [
+        0,
+        24
+      ],
+      "ambiguous_rate": 0.0,
+      "application_bug_precision": 0.5,
+      "application_bug_precision_count": [
+        12,
+        24
+      ],
+      "application_bug_precision_wilson95": [
+        0.3142742581957335,
+        0.6857257418042665
+      ],
+      "application_bug_recall": 1.0,
+      "application_bug_recall_count": [
+        12,
+        12
+      ],
+      "application_bug_recall_wilson95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "confusion_matrix": {
+        "agent_error": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 12
+        },
+        "ambiguous": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "application_bug": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 12
+        }
+      },
+      "false_bug_report_count": [
+        12,
+        12
+      ],
+      "false_bug_report_rate": 1.0,
+      "false_bug_report_wilson95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "macro_f1": 0.2222222222222222,
+      "n": 24
+    },
+    "trajectory": {
+      "accuracy": 0.8333333333333334,
+      "accuracy_count": [
+        20,
+        24
+      ],
+      "accuracy_wilson95": [
+        0.6414692935030095,
+        0.9332132367136705
+      ],
+      "ambiguous_count": [
+        0,
+        24
+      ],
+      "ambiguous_rate": 0.0,
+      "application_bug_precision": 0.75,
+      "application_bug_precision_count": [
+        12,
+        16
+      ],
+      "application_bug_precision_wilson95": [
+        0.5050168346449122,
+        0.8981793250878696
+      ],
+      "application_bug_recall": 1.0,
+      "application_bug_recall_count": [
+        12,
+        12
+      ],
+      "application_bug_recall_wilson95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "confusion_matrix": {
+        "agent_error": {
+          "agent_error": 8,
+          "ambiguous": 0,
+          "application_bug": 4
+        },
+        "ambiguous": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 0
+        },
+        "application_bug": {
+          "agent_error": 0,
+          "ambiguous": 0,
+          "application_bug": 12
+        }
+      },
+      "false_bug_report_count": [
+        4,
+        12
+      ],
+      "false_bug_report_rate": 0.3333333333333333,
+      "false_bug_report_wilson95": [
+        0.13812009109121315,
+        0.6093779111272004
+      ],
+      "macro_f1": 0.5523809523809523,
+      "n": 24
+    }
+  },
+  "by_split": {
+    "dev": {
+      "active": {
+        "accuracy": 1.0,
+        "accuracy_count": [
+          8,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.6755924351161198,
+          1.0
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 1.0,
+        "application_bug_precision_count": [
+          4,
+          4
+        ],
+        "application_bug_precision_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 4,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          0,
+          4
+        ],
+        "false_bug_report_rate": 0.0,
+        "false_bug_report_wilson95": [
+          0.0,
+          0.4898908364545973
+        ],
+        "macro_f1": 0.6666666666666666,
+        "n": 8
+      },
+      "terminal": {
+        "accuracy": 0.5,
+        "accuracy_count": [
+          4,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.21521606221387757,
+          0.7847839377861224
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 0.5,
+        "application_bug_precision_count": [
+          4,
+          8
+        ],
+        "application_bug_precision_wilson95": [
+          0.21521606221387757,
+          0.7847839377861224
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          4,
+          4
+        ],
+        "false_bug_report_rate": 1.0,
+        "false_bug_report_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "macro_f1": 0.2222222222222222,
+        "n": 8
+      },
+      "trajectory": {
+        "accuracy": 0.875,
+        "accuracy_count": [
+          7,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.5291118177871464,
+          0.9775825085499433
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 0.8,
+        "application_bug_precision_count": [
+          4,
+          5
+        ],
+        "application_bug_precision_wilson95": [
+          0.37553462976252533,
+          0.9637758913675698
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 3,
+            "ambiguous": 0,
+            "application_bug": 1
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          1,
+          4
+        ],
+        "false_bug_report_rate": 0.25,
+        "false_bug_report_wilson95": [
+          0.04558726080970055,
+          0.6993581574175981
+        ],
+        "macro_f1": 0.582010582010582,
+        "n": 8
+      }
+    },
+    "test": {
+      "active": {
+        "accuracy": 1.0,
+        "accuracy_count": [
+          8,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.6755924351161198,
+          1.0
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 1.0,
+        "application_bug_precision_count": [
+          4,
+          4
+        ],
+        "application_bug_precision_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 4,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          0,
+          4
+        ],
+        "false_bug_report_rate": 0.0,
+        "false_bug_report_wilson95": [
+          0.0,
+          0.4898908364545973
+        ],
+        "macro_f1": 0.6666666666666666,
+        "n": 8
+      },
+      "terminal": {
+        "accuracy": 0.5,
+        "accuracy_count": [
+          4,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.21521606221387757,
+          0.7847839377861224
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 0.5,
+        "application_bug_precision_count": [
+          4,
+          8
+        ],
+        "application_bug_precision_wilson95": [
+          0.21521606221387757,
+          0.7847839377861224
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          4,
+          4
+        ],
+        "false_bug_report_rate": 1.0,
+        "false_bug_report_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "macro_f1": 0.2222222222222222,
+        "n": 8
+      },
+      "trajectory": {
+        "accuracy": 0.75,
+        "accuracy_count": [
+          6,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.40927543031016883,
+          0.9285207872478909
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 0.6666666666666666,
+        "application_bug_precision_count": [
+          4,
+          6
+        ],
+        "application_bug_precision_wilson95": [
+          0.299993315138392,
+          0.9032285888942195
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 2,
+            "ambiguous": 0,
+            "application_bug": 2
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          2,
+          4
+        ],
+        "false_bug_report_rate": 0.5,
+        "false_bug_report_wilson95": [
+          0.15003898915214947,
+          0.8499610108478506
+        ],
+        "macro_f1": 0.48888888888888893,
+        "n": 8
+      }
+    },
+    "validation": {
+      "active": {
+        "accuracy": 1.0,
+        "accuracy_count": [
+          8,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.6755924351161198,
+          1.0
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 1.0,
+        "application_bug_precision_count": [
+          4,
+          4
+        ],
+        "application_bug_precision_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 4,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          0,
+          4
+        ],
+        "false_bug_report_rate": 0.0,
+        "false_bug_report_wilson95": [
+          0.0,
+          0.4898908364545973
+        ],
+        "macro_f1": 0.6666666666666666,
+        "n": 8
+      },
+      "terminal": {
+        "accuracy": 0.5,
+        "accuracy_count": [
+          4,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.21521606221387757,
+          0.7847839377861224
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 0.5,
+        "application_bug_precision_count": [
+          4,
+          8
+        ],
+        "application_bug_precision_wilson95": [
+          0.21521606221387757,
+          0.7847839377861224
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          4,
+          4
+        ],
+        "false_bug_report_rate": 1.0,
+        "false_bug_report_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "macro_f1": 0.2222222222222222,
+        "n": 8
+      },
+      "trajectory": {
+        "accuracy": 0.875,
+        "accuracy_count": [
+          7,
+          8
+        ],
+        "accuracy_wilson95": [
+          0.5291118177871464,
+          0.9775825085499433
+        ],
+        "ambiguous_count": [
+          0,
+          8
+        ],
+        "ambiguous_rate": 0.0,
+        "application_bug_precision": 0.8,
+        "application_bug_precision_count": [
+          4,
+          5
+        ],
+        "application_bug_precision_wilson95": [
+          0.37553462976252533,
+          0.9637758913675698
+        ],
+        "application_bug_recall": 1.0,
+        "application_bug_recall_count": [
+          4,
+          4
+        ],
+        "application_bug_recall_wilson95": [
+          0.5101091635454027,
+          1.0
+        ],
+        "confusion_matrix": {
+          "agent_error": {
+            "agent_error": 3,
+            "ambiguous": 0,
+            "application_bug": 1
+          },
+          "ambiguous": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 0
+          },
+          "application_bug": {
+            "agent_error": 0,
+            "ambiguous": 0,
+            "application_bug": 4
+          }
+        },
+        "false_bug_report_count": [
+          1,
+          4
+        ],
+        "false_bug_report_rate": 0.25,
+        "false_bug_report_wilson95": [
+          0.04558726080970055,
+          0.6993581574175981
+        ],
+        "macro_f1": 0.582010582010582,
+        "n": 8
+      }
+    }
+  },
+  "condition_counts": {
+    "agent_fault": 12,
+    "application_fault": 12,
+    "clean": 12
+  },
+  "cost_latency": {
+    "estimated_cost_rub": 0.0,
+    "gpu_wall_clock_seconds": 0.0,
+    "mean_active_probe_latency_ms": 7.514147110567945,
+    "mean_execution_latency_ms": 65.80048845757523,
+    "vlm_calls": 0
+  },
+  "episode_count": 36,
+  "failed_attribution_episode_count": 24,
+  "mcnemar_terminal_to_active": {
+    "discordant": 12,
+    "exact_p_two_sided": 0.00048828125,
+    "left_only": 0,
+    "low_power_warning": false,
+    "right_only": 12
+  },
+  "paired_terminal_to_active": {
+    "ci95": [
+      0.29166666666666663,
+      0.7083333333333333
+    ],
+    "difference": 0.5,
+    "samples": 5000
+  },
+  "recovery": {
+    "active_probes": 24,
+    "active_probes_per_episode": 0.6666666666666666,
+    "diagnostic_recovery_success_count": [
+      24,
+      24
+    ],
+    "diagnostic_recovery_success_rate": 1.0,
+    "failed_episodes": 24
+  },
+  "split_counts": {
+    "dev": 12,
+    "test": 12,
+    "validation": 12
+  },
+  "task_metrics": {
+    "clean_success_count": [
+      12,
+      12
+    ],
+    "clean_success_rate": 1.0,
+    "clean_success_wilson95": [
+      0.7575059933447592,
+      1.0
+    ],
+    "faulted_success_count": [
+      0,
+      24
+    ],
+    "faulted_success_rate": 0.0,
+    "faulted_success_wilson95": [
+      1.3877787807814457e-17,
+      0.13797620467498017
+    ],
+    "invalid_action_rate": 0.0,
+    "loop_repetition_rate": 0.01932367149758454,
+    "mean_steps": 5.75,
+    "parse_failure_rate": 0.0
+  }
+}

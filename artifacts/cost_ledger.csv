@@ -1,0 +1,3 @@
+timestamp,execution_kind,provider,instance_type,hourly_rate_rub,hard_runtime_cap_hours,forecast_cost_rub,actual_cost_rub,status,note
+2026-09-03T00:00:00+03:00,local_cpu,local,none,0,0,0,0,completed,No paid compute launched
+

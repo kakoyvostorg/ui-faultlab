@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-09-03T17:10:19+03:00",
+  "surface": "real local HTTP UI in Codex in-app browser",
+  "url": "http://127.0.0.1:8765/",
+  "checks": {
+    "initial_event_cards": 3,
+    "create_event_saved_exact_title_date_time": true,
+    "deterministic_reset_restored_three_cards": true,
+    "delete_confirmation_modal_visible": true,
+    "delete_removed_target_event": true,
+    "browser_session_closed": true,
+    "server_process_stopped": true
+  },
+  "used_for_experiment_metrics": false,
+  "note": "Playwright CLI remained unavailable because Node/npm was absent; verification used the in-app browser instead."
+}

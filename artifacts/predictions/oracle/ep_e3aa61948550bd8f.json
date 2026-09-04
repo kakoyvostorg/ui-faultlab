@@ -1,0 +1,8 @@
+{
+  "confidence": 1.0,
+  "evidence": [
+    "privileged fault metadata"
+  ],
+  "label": "agent_error",
+  "mode": "oracle_only"
+}
