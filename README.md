@@ -1,51 +1,51 @@
 # UI-FaultLab
 
 [![CI](https://github.com/kakoyvostorg/ui-faultlab/actions/workflows/ci.yml/badge.svg)](https://github.com/kakoyvostorg/ui-faultlab/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Лицензия: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-UI-FaultLab is a compact executable prototype for a specific GUI-agent reliability question:
+UI-FaultLab — компактный исполняемый прототип для исследования конкретной проблемы надёжности GUI-агентов:
 
-> When a visual UI test fails, can trajectory-conditioned replay distinguish an agent mistake from an application defect more reliably than a final-screenshot judgment?
+> Если визуальный UI-тест завершился неудачей, может ли диагностика по траектории и повторному выполнению действий надёжнее отличить ошибку агента от дефекта приложения, чем оценка только по финальному скриншоту?
 
-The repository contains a deterministic Mini Calendar, screenshot-only observations, three agent faults, three application faults, resumable artifact logging, execution-based evaluation, a 36-episode controlled mechanism study, a 12-episode ShowUI-2B action baseline, and a frozen 24-case learned-agent differential-replay experiment.
+Репозиторий содержит детерминированное приложение Mini Calendar, наблюдения только через скриншоты, три типа ошибок агента, три типа ошибок приложения, возобновляемое сохранение артефактов, оценку по фактическому выполнению, контролируемое исследование на 36 эпизодах, action-baseline ShowUI-2B на 12 эпизодах и зафиксированный paired-эксперимент с обученным агентом на 24 случаях.
 
-This is a controlled synthetic study inspired by GUI-agent reliability work. It is not a production tester, a general benchmark, or a state-of-the-art claim.
+Это небольшое контролируемое синтетическое исследование, вдохновлённое задачами надёжности GUI-агентов. Это не production-система тестирования, не универсальный benchmark и не заявление о state of the art.
 
-## Current result
+## Основной результат
 
-### Learned-agent paired attribution
+### Paired-атрибуция с обученным агентом
 
-The strongest end-to-end result uses real ShowUI-2B trajectories rather than a scripted actor. ShowUI ran once on each of 24 frozen candidate tasks and made 122 model calls. Every parsed candidate action was then replayed unchanged on a known-good reference, with no extra VLM inference.
+В главном end-to-end эксперименте используются реальные траектории ShowUI-2B, а не scripted actor. ShowUI был запущен по одному разу на каждом из 24 заранее зафиксированных candidate-кейсов и сделал 122 вызова модели. Затем каждое успешно распарсенное действие candidate без изменений воспроизводилось на заведомо исправной reference-версии — без дополнительных вызовов VLM.
 
-Among 21 candidate failures, blind differential replay correctly attributed **20/21 = 95.2%** (Wilson 95% CI 77.3%–99.2%). It identified all 3 causally decisive application regressions, made **0/18 false application-bug reports** on other failures, and returned `ambiguous` for 7/21 failures. An existing terminal-only comparator that calls every failure an application regression was correct on 3/21 and falsely blamed the application on 18/18 non-application failures.
+Candidate не выполнил 21 из 24 задач. Дифференциальный replay, не знающий скрытого условия, правильно атрибутировал **20/21 = 95,2%** падений (95%-й интервал Уилсона: 77,3–99,2%). Он нашёл все 3 причинно различимые регрессии приложения, не выдал **ни одного ложного обвинения приложения в 18 остальных падениях** и вернул `ambiguous` для 7 из 21 падений. Существующий terminal-only comparator, который считает каждое падение регрессией приложения, правильно классифицировал только 3/21 случаев и ошибочно обвинил приложение во всех 18 случаях, не относящихся к доказанной регрессии.
 
-![Paired attribution accuracy](report/paired_results/accuracy_comparison.svg)
+![Точность paired-атрибуции](report/paired_results/accuracy_comparison.svg)
 
-This is a small synthetic result, not a general benchmark score: there are only three decisive application-regression cases, and all cases share one calendar UI. Eight faulted failures have conservative `ambiguous` gold because the same actions also failed on the reference. See the [paired results report](report/PAIRED_RESULTS.md), [trace gallery](report/paired_results/trace_gallery.html), [metrics](artifacts/paired_metrics.json), and [validated raw archive](artifacts/paired_same_task_run.tar.gz).
+Это небольшой синтетический результат, а не универсальная оценка качества GUI-агентов: в выборке всего три причинно различимые регрессии, а все кейсы относятся к одному календарному интерфейсу. В восьми faulted-кейсах gold-консервативно равен `ambiguous`, потому что та же последовательность действий провалилась и на reference. Подробности: [отчёт по paired-эксперименту](report/PAIRED_RESULTS.md), [галерея траекторий](report/paired_results/trace_gallery.html), [метрики](artifacts/paired_metrics.json) и [проверенный архив сырых данных](artifacts/paired_same_task_run.tar.gz).
 
-### Controlled mechanism benchmark
+### Контролируемая проверка механизма
 
-The frozen experiment has 36 episodes: 4 tasks × 3 state seeds × clean/agent-fault/application-fault. All report values are rebuilt from `artifacts/episodes/*/evaluation.json`.
+Зафиксированный эксперимент содержит 36 эпизодов: 4 задачи × 3 seed × clean/agent-fault/application-fault. Все значения в отчёте заново рассчитываются из `artifacts/episodes/*/evaluation.json`.
 
-| diagnosis | app-bug precision | app-bug recall | accuracy | false bug report rate |
+| Метод диагностики | Precision для багов приложения | Recall для багов приложения | Accuracy | Доля ложных bug report |
 |---|---:|---:|---:|---:|
-| terminal-only | 12/24 = 50.0% | 12/12 = 100.0% | 12/24 = 50.0% | 12/12 = 100.0% |
-| passive trajectory | 12/16 = 75.0% | 12/12 = 100.0% | 20/24 = 83.3% | 4/12 = 33.3% |
-| one-probe active replay | 12/12 = 100.0% | 12/12 = 100.0% | 24/24 = 100.0% | 0/12 = 0.0% |
+| Только финальный экран | 12/24 = 50,0% | 12/12 = 100,0% | 12/24 = 50,0% | 12/12 = 100,0% |
+| Пассивный анализ траектории | 12/16 = 75,0% | 12/12 = 100,0% | 20/24 = 83,3% | 4/12 = 33,3% |
+| Один активный replay | 12/12 = 100,0% | 12/12 = 100,0% | 24/24 = 100,0% | 0/12 = 0,0% |
 
-For the primary active app-bug precision, the Wilson 95% interval is 75.8%–100.0%. The result is exact for these fixtures but small, template-correlated, and synthetic. See [`report/REPORT.md`](report/REPORT.md) for denominators, intervals, paired bootstrap, McNemar, cost, and limitations.
+Для основной метрики active app-bug precision 95%-й интервал Уилсона составляет 75,8–100,0%. Результат точен для этих fixtures, но выборка мала, эпизоды коррелированы общими шаблонами, а среда синтетическая. В [`report/REPORT.md`](report/REPORT.md) приведены знаменатели, интервалы, paired bootstrap, тест Мак-Немара, стоимость и ограничения.
 
-### Earlier clean ShowUI-2B action baseline
+### Предшествующий action-baseline ShowUI-2B
 
-The learned-agent baseline ran 12 clean, known-good episodes: 4 tasks × 3 deterministic seeds. It made 53 real model calls and succeeded on 3/12 tasks (25.0%; Wilson 95% CI 8.9%–53.2%). All three successes were the short `delete_event` flow; the three form-heavy task families failed on every seed.
+Обученный агент был запущен на 12 чистых эпизодах заведомо исправного приложения: 4 задачи × 3 детерминированных seed. Он сделал 53 реальных вызова модели и выполнил 3/12 задач (25,0%; 95%-й интервал Уилсона: 8,9–53,2%). Все три успеха относятся к короткому сценарию `delete_event`; три семейства задач с формами провалились на каждом seed.
 
-![ShowUI success by task](report/showui_results/success_by_task.svg)
+![Успешность ShowUI по задачам](report/showui_results/success_by_task.svg)
 
-The failures are observed rather than hypothetical: `create_event` produced three strict-protocol parse failures after emitting multiple actions at once, while attendee and rescheduling traces targeted the wrong form fields and then looped or exhausted the step budget. See the full [ShowUI results note](report/SHOWUI_RESULTS.md), [interactive trace gallery](report/showui_results/trace_gallery.html), [machine-readable summary](artifacts/showui_full_summary.json), and [complete trajectory archive](artifacts/showui_full_run.tar.gz).
+Ошибки наблюдались в реальных траекториях, а не были придуманы заранее. В `create_event` агент трижды нарушил строгий протокол, сгенерировав несколько действий одновременно. В сценариях добавления участника и переноса встречи он выбирал неправильные поля формы, после чего зацикливался или исчерпывал бюджет шагов. См. [полный отчёт ShowUI](report/SHOWUI_RESULTS.md), [интерактивную галерею траекторий](report/showui_results/trace_gallery.html), [машиночитаемую сводку](artifacts/showui_full_summary.json) и [полный архив траекторий](artifacts/showui_full_run.tar.gz).
 
-## Quick start
+## Быстрый запуск
 
-The runtime itself uses only the Python standard library. Python 3.11+ is required.
+Основной runtime использует только стандартную библиотеку Python. Требуется Python 3.11 или новее.
 
 ```bash
 python3 -m venv .venv
@@ -53,7 +53,7 @@ python3 -m venv .venv
 .venv/bin/pytest -q
 ```
 
-Run one deterministic episode:
+Запуск одного детерминированного эпизода:
 
 ```bash
 python3 scripts/run_episode.py \
@@ -62,17 +62,17 @@ python3 scripts/run_episode.py \
   --task create_event
 ```
 
-Open the real Mini Calendar web UI:
+Запуск веб-интерфейса Mini Calendar:
 
 ```bash
 python3 -m app.server --host 127.0.0.1 --port 8765
 ```
 
-Then visit `http://127.0.0.1:8765`. The browser UI exposes only normal application state. It never exposes injected fault labels or evaluator state.
+После этого откройте `http://127.0.0.1:8765`. Браузерный интерфейс показывает только обычное состояние приложения. Тип внедрённой ошибки и состояние evaluator в нём никогда не отображаются.
 
-## Reproduce the frozen experiment
+## Воспроизведение зафиксированного эксперимента
 
-Run the splits in order. Validation writes `artifacts/freeze.json`; test refuses to run without both explicit flags and a matching frozen config hash.
+Запускайте split по порядку. На этапе validation создаётся `artifacts/freeze.json`; test отказывается запускаться без двух явных флагов и совпадающего хеша зафиксированной конфигурации.
 
 ```bash
 python3 scripts/run_experiment.py --config configs/experiment.yaml --split dev
@@ -86,73 +86,73 @@ python3 scripts/run_experiment.py \
 python3 scripts/build_report.py --artifacts artifacts --output report/REPORT.md
 ```
 
-Completed episodes with the same config hash are resumed rather than overwritten. Use `--force` only for an intentional regeneration; old runs should be archived first if preservation matters.
+Завершённые эпизоды с тем же хешем конфигурации возобновляются, а не перезаписываются. Используйте `--force` только для намеренного повторного запуска; перед этим стоит отдельно сохранить старые результаты.
 
-## Environment and tasks
+## Среда и задачи
 
-Mini Calendar provides four multi-step tasks:
+Mini Calendar предоставляет четыре многошаговые задачи:
 
-- `create_event`: enter a title, date, and time, then save.
-- `add_attendee`: edit Design Review, add an attendee, then save.
-- `reschedule_event`: edit Design Review, replace its time, then save.
-- `delete_event`: open Deprecated Sync, delete it, and confirm the modal.
+- `create_event`: ввести название, дату и время, затем сохранить встречу;
+- `add_attendee`: открыть встречу Design Review, добавить участника и сохранить;
+- `reschedule_event`: открыть Design Review, заменить время и сохранить;
+- `delete_event`: открыть Deprecated Sync, удалить встречу и подтвердить действие в модальном окне.
 
-Actions use a validated normalized schema: `tap(x,y)`, `input(x,y,text)`, `type(text)`, `scroll(direction)`, `back`, and `finish`. `input` atomically focuses a visible field and enters text, matching ShowUI's official action semantics. Coordinates are `[x,y]` in `[0,1]`, measured from the screenshot's top-left. Reset state, event ordering, task text, and screenshot rendering are deterministic for a given seed.
+Действия используют валидируемую нормализованную схему: `tap(x,y)`, `input(x,y,text)`, `type(text)`, `scroll(direction)`, `back` и `finish`. Операция `input` атомарно фокусирует видимое поле и вводит текст, что соответствует официальной семантике действий ShowUI. Координаты `[x,y]` нормализованы в диапазон `[0,1]` и отсчитываются от левого верхнего угла скриншота. Reset-состояние, порядок событий, текст задачи и отрисовка скриншотов детерминированы для заданного seed.
 
-## Faults and causal labels
+## Ошибки и причинные метки
 
-Agent faults intercept one intended action and preserve both requested and executed actions in privileged logs:
+Agent faults перехватывают одно запрошенное действие. В привилегированных логах сохраняются и intended action, и фактически выполненное действие:
 
-- `coordinate_jitter`
-- `wrong_candidate`
-- `duplicate_action`
+- `coordinate_jitter`;
+- `wrong_candidate`;
+- `duplicate_action`.
 
-Application faults modify the actual transition or persisted state:
+Application faults изменяют реальный переход или сохраняемое состояние приложения:
 
-- `save_noop`
-- `value_corruption`
-- `confirmation_transition_bug`
+- `save_noop`;
+- `value_corruption`;
+- `confirmation_transition_bug`.
 
-Must-have episodes contain exactly one fault family. Gold metadata is saved in `gold.json` only after episode identity is fixed; it is excluded from the agent and main diagnoser serializers.
+Каждый обязательный faulted-эпизод содержит ровно одно семейство ошибок. Gold-метаданные записываются в `gold.json` только после фиксации идентичности эпизода; они исключены из сериализаторов агента и основной диагностики.
 
-## Screenshot-only boundary
+## Граница screenshot-only
 
-| consumer | allowed | forbidden |
+| Компонент | Разрешено | Запрещено |
 |---|---|---|
-| visual actor | instruction, screenshot path, requested-action history | DOM, accessibility tree, backend state, fault type, target boxes, predicates |
-| terminal diagnoser | instruction, final screenshot, failure fact | action history, backend state, gold label |
-| passive diagnoser | instruction, screenshots, requested actions, visible transition result | executed-action override, injector metadata, backend state, gold label |
-| active diagnoser | passive context plus one replay screenshot | restored state contents, app-fault setting, backend state, gold label |
-| oracle/evaluator | all privileged state | n/a; always labeled oracle |
+| Визуальный агент | Инструкция, путь к скриншоту, история запрошенных действий | DOM, accessibility tree, backend state, тип fault, target boxes, success predicates |
+| Terminal diagnoser | Инструкция, финальный скриншот, факт падения | История действий, backend state, gold label |
+| Passive diagnoser | Инструкция, скриншоты, запрошенные действия, видимый результат перехода | Подмена выполненного действия, injector metadata, backend state, gold label |
+| Active diagnoser | Пассивный контекст и один replay-скриншот | Содержимое восстановленного состояния, настройка app fault, backend state, gold label |
+| Oracle/evaluator | Всё привилегированное состояние | Не применимо; всегда явно обозначается как oracle |
 
-The artifact `steps.jsonl` intentionally retains intended/executed actions for post-hoc auditing, but `public_trajectory()` strips executed actions and injector flags before main diagnosis. Tests fail if forbidden keys cross that boundary.
+Артефакт `steps.jsonl` намеренно сохраняет intended/executed actions для последующего аудита. Перед основной диагностикой `public_trajectory()` удаляет выполненные действия и признаки инъектора. Тесты падают, если через эту границу проходят запрещённые поля.
 
-## Diagnosis modes
+## Режимы диагностики
 
-1. **Terminal-only** sees only the failed final screenshot and is intentionally weak.
-2. **Passive trajectory** inspects visible screenshot/action transitions and selects a first suspected step.
-3. **Active replay** restores the environment immediately before that step and executes one intended-action counterfactual under the same application condition. It classifies from visual transition agreement, never from the fault label.
-4. **Oracle** reads privileged fault metadata only as an evaluator upper bound.
+1. **Terminal-only** видит только неуспешный финальный скриншот и намеренно служит слабым baseline.
+2. **Passive trajectory** анализирует видимые переходы между скриншотами и действиями и выбирает первый подозрительный шаг.
+3. **Active replay** восстанавливает среду непосредственно перед подозрительным шагом и один раз выполняет intended action при том же состоянии приложения. Классификация строится по совпадению видимых переходов, а не по скрытому fault label.
+4. **Oracle** читает привилегированные fault-метаданные только как верхнюю границу evaluator.
 
-The three principal diagnosers in the controlled attribution experiment are deterministic and model-free. This cleanly tests the environment and causal replay mechanism. The separate ShowUI run tests learned visual action generation, not learned failure diagnosis.
+Три основных diagnoser в контролируемом attribution-эксперименте детерминированы и не используют модели. Это позволяет отдельно проверить среду и механизм causal replay. Последующий запуск ShowUI проверяет генерацию действий обученным визуальным агентом, а не качество обученной модели диагностики.
 
 ## Open VLM baseline
 
-The ShowUI-2B checkpoint was checked against official sources and pinned to `cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60`. The adapter follows the official single-action dictionary protocol, normalized `[x,y]` coordinates, and official preprocessing bounds. Raw generations are preserved exactly and parsed with a strict literal parser; malformed or multi-action generations are failures rather than silently repaired.
+Checkpoint ShowUI-2B был проверен по официальным источникам и зафиксирован на revision `cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60`. Adapter следует официальному протоколу словаря с одним действием, использует нормализованные координаты `[x,y]` и официальные границы preprocessing. Исходные генерации сохраняются без изменений и разбираются строгим literal parser; некорректные ответы и генерации с несколькими действиями считаются ошибками, а не исправляются автоматически.
 
-After dependency and driver preflights, the final cloud environment used PyTorch 2.6.0 with CUDA 11.8 and the fast Qwen2-VL image processor. A clean two-inference smoke test first verified that the model clicked the intended visible controls. The frozen 12-episode run then completed successfully:
+После проверки зависимостей и драйверов финальная облачная среда использовала PyTorch 2.6.0, CUDA 11.8 и быстрый image processor Qwen2-VL. Сначала smoke test с двумя inference подтвердил, что модель нажимает нужные видимые элементы. Затем успешно завершился зафиксированный прогон на 12 эпизодах:
 
-- model loaded: yes;
-- real model inference calls: 53;
-- successful tasks: 3/12, all `delete_event`;
-- failure attribution: 9 `agent_error` labels because the application was clean and known-good;
-- preserved evidence: every screenshot, raw output, parsed action, latency, transition hash, and stop reason.
+- модель загружена: да;
+- реальные вызовы модели: 53;
+- выполненные задачи: 3/12, все `delete_event`;
+- атрибуция девяти падений: `agent_error`, поскольку приложение было чистым и заведомо исправным;
+- сохранённые данные: каждый скриншот, raw output, распарсенное действие, latency, transition hash и причина остановки.
 
-This learned baseline is intentionally separate from the 36-episode causal attribution benchmark: it supplies real agent trajectories without weakening the benchmark's controlled labels. See [`VLM_BASELINE.md`](VLM_BASELINE.md) and [`report/SHOWUI_RESULTS.md`](report/SHOWUI_RESULTS.md).
+Этот обученный baseline намеренно отделён от контролируемого causal attribution benchmark на 36 эпизодах. Он даёт реальные траектории агента, не ослабляя контролируемые метки основного механистического эксперимента. См. [`VLM_BASELINE.md`](VLM_BASELINE.md) и [`report/SHOWUI_RESULTS.md`](report/SHOWUI_RESULTS.md).
 
-## Artifacts
+## Артефакты
 
-Each episode contains:
+Каждый эпизод содержит:
 
 ```text
 artifacts/episodes/<opaque_episode_id>/
@@ -168,49 +168,49 @@ artifacts/episodes/<opaque_episode_id>/
   evaluation.json
 ```
 
-Global outputs:
+Общие результаты:
 
-- `artifacts/registry.json`: atomic resume registry.
-- `artifacts/freeze.json`: pre-test experiment freeze.
-- `artifacts/test_access_log.jsonl`: explicit test access audit.
-- `artifacts/predictions/<method>/*.json`: machine-readable predictions.
-- `artifacts/tables/metrics.json`: source of every report metric.
-- `artifacts/tables/attribution_summary.csv`: compact metric export.
-- `artifacts/tables/demo_traces.json`: ranked interview traces.
-- `artifacts/showui_full_summary.json`: aggregate and per-episode learned-baseline results.
-- `artifacts/showui_full_run.tar.gz`: all 12 ShowUI trajectories, including 62 screenshots and 53 step records.
-- `artifacts/paired_preregistration.json`: frozen balance, model revision, call cap, and config hashes for the 24-case paired run.
-- `artifacts/paired_same_task_summary.json`: all learned-agent candidate/reference outcomes and predictions.
-- `artifacts/paired_metrics.json` and `artifacts/paired_metrics.csv`: confusion matrices, intervals, paired comparison, runtime, and cost estimate.
-- `artifacts/paired_same_task_run.tar.gz`: validated raw candidate/reference trajectories and quarantined causal gold.
-- `artifacts/cost_ledger.csv`: cloud-job ledger with runtime-derived cost estimates; actual billing remains pending.
-- `report/failure_gallery/index.html`: six visual counterfactual cases.
-- `report/showui_results/trace_gallery.html`: four representative learned-agent traces with raw outputs.
-- `report/paired_results/trace_gallery.html`: candidate/reference comparisons for an app regression, agent failure, ambiguous case, and the sole attribution error.
+- `artifacts/registry.json`: атомарный реестр для возобновления запусков;
+- `artifacts/freeze.json`: фиксация конфигурации перед test;
+- `artifacts/test_access_log.jsonl`: журнал явного доступа к test;
+- `artifacts/predictions/<method>/*.json`: машиночитаемые предсказания;
+- `artifacts/tables/metrics.json`: источник всех метрик отчёта;
+- `artifacts/tables/attribution_summary.csv`: компактный экспорт метрик;
+- `artifacts/tables/demo_traces.json`: ранжированные траектории для демонстрации;
+- `artifacts/showui_full_summary.json`: агрегированные и поэпизодные результаты обученного baseline;
+- `artifacts/showui_full_run.tar.gz`: все 12 траекторий ShowUI, включая 62 скриншота и 53 записи шагов;
+- `artifacts/paired_preregistration.json`: зафиксированные баланс кейсов, revision модели, лимит вызовов и хеши конфигурации paired-прогона;
+- `artifacts/paired_same_task_summary.json`: результаты candidate/reference и предсказания по всем случаям;
+- `artifacts/paired_metrics.json` и `artifacts/paired_metrics.csv`: confusion matrices, интервалы, paired-сравнение, runtime и оценка стоимости;
+- `artifacts/paired_same_task_run.tar.gz`: проверенные сырые candidate/reference-траектории и изолированный causal gold;
+- `artifacts/cost_ledger.csv`: журнал облачных запусков с оценками стоимости по времени работы; фактический billing пока не указан;
+- `report/failure_gallery/index.html`: шесть визуальных контрфактуальных примеров;
+- `report/showui_results/trace_gallery.html`: четыре показательные траектории обученного агента с raw outputs;
+- `report/paired_results/trace_gallery.html`: сравнения candidate/reference для app regression, agent failure, ambiguous case и единственной ошибки атрибуции.
 
-## Repository map
+## Структура репозитория
 
 ```text
-app/                    Mini Calendar state, tasks, faults, server, browser UI
-ui_faultlab/actions.py  strict normalized action schema
-ui_faultlab/environment.py deterministic executor/snapshot/screenshot boundary
-ui_faultlab/faults/     agent interceptors
-ui_faultlab/agents/     scripted oracle and gated ShowUI adapter
-ui_faultlab/diagnosis/  terminal, trajectory, active replay, oracle
-ui_faultlab/evaluation/ metrics, Wilson intervals, paired statistics
-ui_faultlab/artifacts/  manifest and atomic resume registry
-scripts/                episode, experiment, model gate, gallery, report commands
-tests/                  unit and integration acceptance checks
-report/showui_results/  learned-baseline charts, trace gallery, summary, raw archive
-report/paired_results/  differential-replay charts and candidate/reference gallery
+app/                    состояние, задачи, faults, сервер и браузерный UI Mini Calendar
+ui_faultlab/actions.py  строгая схема нормализованных действий
+ui_faultlab/environment.py детерминированное выполнение, snapshots и screenshot boundary
+ui_faultlab/faults/     перехватчики ошибок агента
+ui_faultlab/agents/     scripted oracle и защищённый adapter ShowUI
+ui_faultlab/diagnosis/  terminal, trajectory, active replay и oracle
+ui_faultlab/evaluation/ метрики, интервалы Уилсона и paired-статистика
+ui_faultlab/artifacts/  manifest и атомарный resume registry
+scripts/                запуск эпизодов, экспериментов, model gate, галерей и отчётов
+tests/                  unit- и integration-проверки критериев приёмки
+report/showui_results/  графики, галерея, сводка и архив обученного baseline
+report/paired_results/  графики differential replay и candidate/reference gallery
 ```
 
-## Budget and cloud safety
+## Бюджет и безопасность облачных запусков
 
-The operator approved a 600 RUB spend ceiling from a 684 RUB balance, preserving an 84 RUB reserve. The original 12-case ShowUI job ran for 719.132 seconds with a runtime-derived estimate of 33.66–46.74 RUB. The 24-case paired job ran for 1024.101 seconds with an estimate of 47.93–66.57 RUB. Including all setup, failed preflight, smoke, full-run, and paired-run rows, the conservative ledger total is 295.21 RUB—well below the approved ceiling. These are estimates, not confirmed charges; `actual_cost_rub` remains zero until provider billing is available.
+Оператор разрешил потратить не более 600 ₽ из баланса 684 ₽, сохранив резерв 84 ₽. Первый ShowUI-прогон на 12 случаях работал 719,132 секунды; оценка его стоимости по времени составляет 33,66–46,74 ₽. Paired-прогон на 24 случаях работал 1024,101 секунды и оценивается в 47,93–66,57 ₽. Консервативная сумма всех строк ledger — включая setup, неуспешные preflight, smoke, full run и paired run — составляет 295,21 ₽, то есть остаётся значительно ниже разрешённого потолка. Это оценки, а не подтверждённые списания: `actual_cost_rub` останется равным нулю до получения billing от провайдера.
 
-Every paid job had a declared runtime cap, and the full runner checkpointed its summary and compressed trajectories after each episode. No additional cloud run is required to reproduce the report from the downloaded artifacts. Credentials and the cloud project ID are not committed.
+У каждого платного job был заранее объявленный лимит времени. Полный runner сохранял сводку и сжатые траектории после каждого эпизода. Для воспроизведения отчёта из загруженных артефактов новые облачные запуски не требуются. Credentials и cloud project ID не сохраняются в репозитории.
 
-## Demo
+## Демонстрация
 
-Open `report/paired_results/trace_gallery.html` for the primary learned-agent attribution demo, `report/failure_gallery/index.html` for the controlled mechanism cases, and `report/showui_results/trace_gallery.html` for the earlier clean action baseline. A 60–90 second pitch and personal verification checklist are in [`DEMO.md`](DEMO.md).
+Для основной демонстрации attribution откройте `report/paired_results/trace_gallery.html`; для контролируемой проверки механизма — `report/failure_gallery/index.html`; для раннего action-baseline ShowUI — `report/showui_results/trace_gallery.html`. В [`DEMO.md`](DEMO.md) находятся рассказ на 60–90 секунд и список проверок перед собеседованием.
